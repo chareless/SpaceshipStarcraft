@@ -115,17 +115,17 @@ public class SpawnEnemies : MonoBehaviour
     {
         if(Status.wave==3 && bossAlive==true)
         {
-            bossName = "Dimention Gateaway";
+            bossName = "Dimention Gate";
             timeText.text = System.Convert.ToString((int)nextStepSayac);
         }
         if (Status.wave == 6 && bossAlive==true)
         {
-            bossName = "Gate Worm";
+            bossName = "Black Worm";
             timeText.text = System.Convert.ToString((int)nextStepSayac);
         }
         if (Status.wave == 9 && bossAlive==true)
         {
-            bossName = "Control Substance";
+            bossName = "Dark Matter";
             timeText.text = System.Convert.ToString((int)nextStepSayac);
         }
         infoText.text = bossName;
