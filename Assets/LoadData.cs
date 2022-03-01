@@ -119,7 +119,7 @@ public class LoadData : MonoBehaviour
         }
         else
         {
-            loadedMyShips = "";
+            loadedMyShips = "s1s2";
         }
     }
 

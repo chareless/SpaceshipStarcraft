@@ -19,36 +19,42 @@ public class SaveData : MonoBehaviour
     {
         currentScore = Status.score;
         PlayerPrefs.SetInt("Score", currentScore);
+        PlayerPrefs.Save();
     }
 
     static void saveKill()
     {
         currentKill = Status.totalKill;
         PlayerPrefs.SetInt("Kill", currentKill);
+        PlayerPrefs.Save();
     }
 
     static void saveShip()
     {
         currentShip = Status.ship;
         PlayerPrefs.SetInt("Ship", currentShip);
+        PlayerPrefs.Save();
     }
 
     static void saveHealth()
     {
         currentHealth = Status.health;
         PlayerPrefs.SetInt("Health", currentHealth);
+        PlayerPrefs.Save();
     }
 
     static void saveLevel()
     {
         currentLevel = Status.playerLevel;
         PlayerPrefs.SetInt("Level", currentLevel);
+        PlayerPrefs.Save();
     }
 
     static void saveWave()
     {
         currentWave = Status.wave;
         PlayerPrefs.SetInt("Wave",currentWave);
+        PlayerPrefs.Save();
     }
 
     public static void saveCoin()

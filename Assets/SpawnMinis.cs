@@ -10,26 +10,26 @@ public class SpawnMinis : MonoBehaviour
     public static float spawnRate;
     float nextSpawn = 0.0f;
     public float nextStepSayac = 2;
-    public static bool start = false;
+    public static bool start;
 
     void Start()
     {
-       
+        start = false;
     }
 
     void RateControl()
     {
         if (Status.wave == 3)
         {
-            spawnRate = 1.5f;
+            spawnRate = 1.3f;
         }
         if (Status.wave == 6)
         {
-            spawnRate = 1.4f;
+            spawnRate = 1.2f;
         }
         if (Status.wave == 9)
         {
-            spawnRate = 1.25f;
+            spawnRate = 1f;
         }
     }
     void Update()

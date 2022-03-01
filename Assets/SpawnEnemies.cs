@@ -23,12 +23,12 @@ public class SpawnEnemies : MonoBehaviour
     public float sayacText = 3;
     public float infoSayac = -1;
     public static int waveCount;
-    public static int destroyedEnemy = 0;
-    public static int spawnedEnemy = 0;
+    public static int destroyedEnemy;
+    public static int spawnedEnemy;
     public static int completeGame = 0;
-    public static bool bossAlive = false;
-    public static bool bossControl = true;
-    public static bool gameEnd = false;
+    public static bool bossAlive;
+    public static bool bossControl;
+    public static bool gameEnd;
     public static bool isArcade;
     public string bossName;
     public AudioSource gameMusic;
@@ -41,6 +41,11 @@ public class SpawnEnemies : MonoBehaviour
     {
         bossMusic.Stop();
         nextStepSayac = 5;
+        destroyedEnemy = 0;
+        spawnedEnemy = 0;
+        bossAlive = false;
+        bossControl = true;
+        gameEnd = false;
         waveCounts();
         LevelTextUpdate();
     }
@@ -170,7 +175,7 @@ public class SpawnEnemies : MonoBehaviour
                                 gameMusic.Stop();
                                 bossAlive = true;
                                 infoSayac = 3;
-                                nextStepSayac = 500f;
+                                nextStepSayac = 350f;
                                 Instantiate(boss2, new Vector3(12f, 7.5f, 0f), transform.rotation);
                             }
                             if (Status.wave == 9)
@@ -180,7 +185,7 @@ public class SpawnEnemies : MonoBehaviour
                                 gameMusic.Stop();
                                 bossAlive = true;
                                 infoSayac = 3;
-                                nextStepSayac = 750f;
+                                nextStepSayac = 500f;
                                 Instantiate(boss3, new Vector3(0f, 12f, 0f), transform.rotation);
                             }
                         }
@@ -286,7 +291,13 @@ public class SpawnEnemies : MonoBehaviour
                     {
                         Instantiate(ship3, transform.position - new Vector3(random, 0f, 0f), transform.rotation);
                     }
-                       spawnedEnemy++;
+                    spawnedEnemy++;
+
+                    if((int)playTimeSayac % 10==0)
+                    {
+                        StartMenu.coin += 1;
+                        SaveData.saveCoin();
+                    }
                 }
             }
         }

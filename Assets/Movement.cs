@@ -6,7 +6,6 @@ public class Movement : MonoBehaviour
 {
     public static float speedValue=10;
     public float speed;
-    
 
     void Update()
     {

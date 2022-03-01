@@ -43,6 +43,14 @@ public class Status : MonoBehaviour
         if(StartMenu.saveGameFile==false)
         {
             health = maxHealth;
+            wave = 1;
+            playerLevel = 1;
+            lastLevel = 1;
+            totalKill = 0;
+            lastKill = 0;
+            lastBossKill = 0;
+            totalBossKill = 0;
+            score = 0;
             CreateShip();
         }
         if(StartMenu.saveGameFile==true)
@@ -72,7 +80,7 @@ public class Status : MonoBehaviour
 
     void Regen()
     {
-        health += (maxHealth - health) * 25 / 100;
+        health += (maxHealth - health) * 40 / 100;
     }
 
     void PlayerStats()

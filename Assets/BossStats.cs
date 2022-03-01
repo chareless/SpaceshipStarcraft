@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BossStats : MonoBehaviour
 {
-    public bool stop = false;
-    public static int health = 500;
+    public bool stop;
+    public static int health;
 
     void Start()
     {
+        stop = false;
         if(Status.wave==3)
         {
             health = 1000;

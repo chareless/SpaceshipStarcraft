@@ -13,9 +13,9 @@ public class BossLaser : MonoBehaviour
     public GameObject bullet;
     public GameObject beforeFire;
     public int randShoot;
-    public int beforeShoot = 4;
-    public bool randCreated = false;
-    public bool bulletCreated = false;
+    public int beforeShoot;
+    public bool randCreated;
+    public bool bulletCreated;
     public AudioClip laserSound;
     public AudioClip laserFirstSound;
     AudioSource sourceAudio;
@@ -25,6 +25,9 @@ public class BossLaser : MonoBehaviour
         Sayac = 15f;
         fireSayac = 2f;
         endSayac = 2f;
+        beforeShoot = 4;
+        randCreated = false;
+        bulletCreated = false;
     }
 
     void randomPlace()
@@ -105,7 +108,7 @@ public class BossLaser : MonoBehaviour
             {
                 fireSayac = 2f;
                 endSayac = 2f;
-                Sayac = 15f;
+                Sayac = 10f;
                 randCreated = false;
             }
         }

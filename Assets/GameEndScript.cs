@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameEndScript : MonoBehaviour
@@ -12,7 +13,6 @@ public class GameEndScript : MonoBehaviour
     public Text scoreText;
 
     public GameObject waveSpawner;
-
     public GameObject WinSound;
     public GameObject LoseSound;
     public GameObject GameSound;
@@ -52,6 +52,13 @@ public class GameEndScript : MonoBehaviour
         scoreText.text = endScore.ToString();
     }
 
+    public void menuButton()
+    {
+        endScore = Status.score;
+        scoreText.text = endScore.ToString();
+        saveScore();
+        SceneManager.LoadScene("StartMenu");
+    }
     public void quitButton()
     {
         endScore = Status.score;

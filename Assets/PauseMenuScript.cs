@@ -12,13 +12,7 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject pauseButtonUI;
     public GameObject buttonMenuUI;
-
     
-    void Start()
-    {
-        
-    }
-
     public void Pause()
     {
         if(GamePaused==false)
@@ -41,6 +35,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void MenuButton()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("StartMenu");
     }
 

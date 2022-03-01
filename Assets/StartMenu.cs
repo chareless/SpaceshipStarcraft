@@ -34,23 +34,23 @@ public class StartMenu : MonoBehaviour
     public AudioSource clickSound;
     public AudioClip nextClip;
     public AudioClip backClip;
-    public static int maxFPS=60;
+    public static int maxFPS;
     public static float volumeValue;
     public static float speedValue;
-    public static bool saveGameFile = false;
-    public bool shipClicked = false;
+    public static bool saveGameFile;
+    public bool shipClicked;
 
     public AudioClip purchase;
     public AudioClip cancel;
     public static int coin;
-    public static string ownships = "s1s2";
+    public static string ownships;
     public static string[] Myships = new string[10];
-    public static int ship3Price = 200;
-    public static int ship4Price = 250;
-    public static int ship5Price = 300;
-    public static int ship6Price = 400;
-    public static int ship7Price = 500;
-    public static int ship8Price = 1000000;
+    public static int ship3Price;
+    public static int ship4Price;
+    public static int ship5Price;
+    public static int ship6Price;
+    public static int ship7Price;
+    public static int ship8Price;
     public Text ship3PriceText;
     public Text ship4PriceText;
     public Text ship5PriceText;
@@ -58,6 +58,25 @@ public class StartMenu : MonoBehaviour
     public Text ship7PriceText;
     public Text ship8PriceText;
 
+    void Start()
+    {
+        maxFPS = 60;
+        saveGameFile = false;
+        shipClicked = false;
+        ownships = "s1s2";
+        ship3Price = 200;
+        ship4Price = 250;
+        ship5Price = 300;
+        ship6Price = 400;
+        ship7Price = 500;
+        ship8Price = 1000000;
+
+        LoadValues();
+        versionText.text = Application.version;
+        highScoreText.text = LoadData.loadedHigh.ToString();
+        fpsText.text = Application.targetFrameRate.ToString();
+        coinText.text = coin.ToString() + " C";
+    }
     public void PlayNextButtonSound()
     {
         clickSound.PlayOneShot(nextClip);
@@ -122,13 +141,16 @@ public class StartMenu : MonoBehaviour
         DefaultCanvas.SetActive(false);
         SelectShipCanvas.SetActive(true);
         PlayNextButtonSound();
+        saveGameFile = false;
+        SpawnEnemies.isArcade = false;
     }
 
     public void Continue()
     {
-        SceneManager.LoadScene("SampleScene");
         saveGameFile = true;
+        SpawnEnemies.isArcade = false;
         PlayNextButtonSound();
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void BackButton()
@@ -290,7 +312,9 @@ public class StartMenu : MonoBehaviour
             SaveData.saveMyShips();
             coin-=ship3Price;
             SaveData.saveCoin();
+            PlayerPrefs.Save();
             PlayPurchaseSound();
+            LoadValues();
         }
         else
         {
@@ -305,7 +329,9 @@ public class StartMenu : MonoBehaviour
             SaveData.saveMyShips();
             coin-= ship4Price;
             SaveData.saveCoin();
+            PlayerPrefs.Save();
             PlayPurchaseSound();
+            LoadValues();
         }
         else
         {
@@ -320,7 +346,9 @@ public class StartMenu : MonoBehaviour
             SaveData.saveMyShips();
             coin -= ship5Price;
             SaveData.saveCoin();
+            PlayerPrefs.Save();
             PlayPurchaseSound();
+            LoadValues();
         }
         else
         {
@@ -335,7 +363,9 @@ public class StartMenu : MonoBehaviour
             SaveData.saveMyShips();
             coin -= ship6Price;
             SaveData.saveCoin();
+            PlayerPrefs.Save();
             PlayPurchaseSound();
+            LoadValues();
         }
         else
         {
@@ -350,7 +380,9 @@ public class StartMenu : MonoBehaviour
             SaveData.saveMyShips();
             coin -= ship7Price;
             SaveData.saveCoin();
+            PlayerPrefs.Save();
             PlayPurchaseSound();
+            LoadValues();
         }
         else
         {
@@ -365,7 +397,9 @@ public class StartMenu : MonoBehaviour
             SaveData.saveMyShips();
             coin -= ship8Price;
             SaveData.saveCoin();
+            PlayerPrefs.Save();
             PlayPurchaseSound();
+            LoadValues();
         }
         else
         {
@@ -458,6 +492,7 @@ public class StartMenu : MonoBehaviour
 
     public void ShipsControl()
     {
+        ownships = LoadData.loadedMyShips;
         string[] temp = ownships.Split('s');
         int count = 0;
         foreach(string s in temp)
@@ -484,7 +519,7 @@ public class StartMenu : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("End") == 1)
         {
-            ship8Price = 1;
+            ship8Price = 0;
         }
 
         if(shopShips[2].interactable == false)
@@ -590,15 +625,6 @@ public class StartMenu : MonoBehaviour
         MoneyControl();
 
         ShopControl();
-    }
-
-    public void Start()
-    {
-        LoadValues();
-        versionText.text = Application.version;
-        highScoreText.text = LoadData.loadedHigh.ToString();
-        fpsText.text = Application.targetFrameRate.ToString();
-        coinText.text = coin.ToString() + " C";
     }
 
     public void Update()
