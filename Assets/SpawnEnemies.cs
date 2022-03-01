@@ -170,7 +170,7 @@ public class SpawnEnemies : MonoBehaviour
                                 gameMusic.Stop();
                                 bossAlive = true;
                                 infoSayac = 3;
-                                nextStepSayac = 1000f;
+                                nextStepSayac = 500f;
                                 Instantiate(boss2, new Vector3(12f, 7.5f, 0f), transform.rotation);
                             }
                             if (Status.wave == 9)
@@ -180,7 +180,7 @@ public class SpawnEnemies : MonoBehaviour
                                 gameMusic.Stop();
                                 bossAlive = true;
                                 infoSayac = 3;
-                                nextStepSayac = 5000f;
+                                nextStepSayac = 750f;
                                 Instantiate(boss3, new Vector3(0f, 12f, 0f), transform.rotation);
                             }
                         }
@@ -199,7 +199,7 @@ public class SpawnEnemies : MonoBehaviour
                             sayacText = 3;
                             waveCounts();
                             LevelTextUpdate();
-                            StartMenu.coin = (int)(playTimeSayac / 10);
+                            StartMenu.coin += (int)(playTimeSayac / 10);
                             SaveData.saveData();
                             timeText.text = "";
                         }

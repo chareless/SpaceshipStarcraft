@@ -484,7 +484,7 @@ public class StartMenu : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("End") == 1)
         {
-            ship8Price = 0;
+            ship8Price = 1;
         }
 
         if(shopShips[2].interactable == false)

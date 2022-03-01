@@ -34,7 +34,7 @@ public class BossStats : MonoBehaviour
                 {
                     transform.position = new Vector3(0, 7.5f, 0);
                     stop = true;
-                    health = 500;
+                    health = 1000;
                     SpawnMinis.start = true;
                 }
             }
@@ -45,7 +45,7 @@ public class BossStats : MonoBehaviour
                 {
                     transform.position = new Vector3(transform.position.x, 7.5f, 0);
                     stop = true;
-                    health = 1000;
+                    health = 5000;
                     SpawnMinis.start = true;
                 }
             }
@@ -56,7 +56,7 @@ public class BossStats : MonoBehaviour
                 {
                     transform.position = new Vector3(0, 0, 0);
                     stop = true;
-                    health = 5000;
+                    health = 10000;
                     SpawnMinis.start = true;
                 }
             }

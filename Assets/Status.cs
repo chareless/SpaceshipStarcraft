@@ -53,6 +53,7 @@ public class Status : MonoBehaviour
             playerLevel = LoadData.loadedLevel;
             wave = LoadData.loadedWave;
             totalKill = LoadData.loadedKill;
+            
             CreateShip();
         }
         sourceAudio = gameObject.GetComponent<AudioSource>();

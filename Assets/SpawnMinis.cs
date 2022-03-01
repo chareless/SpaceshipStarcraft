@@ -7,19 +7,36 @@ public class SpawnMinis : MonoBehaviour
 {
     public GameObject ship1;
     public GameObject ship2;
-    public static float spawnRate = 1.5f;
+    public static float spawnRate;
     float nextSpawn = 0.0f;
     public float nextStepSayac = 2;
     public static bool start = false;
-    // Start is called before the first frame update
+
     void Start()
     {
+       
     }
-    // Update is called once per frame
+
+    void RateControl()
+    {
+        if (Status.wave == 3)
+        {
+            spawnRate = 1.5f;
+        }
+        if (Status.wave == 6)
+        {
+            spawnRate = 1.4f;
+        }
+        if (Status.wave == 9)
+        {
+            spawnRate = 1.25f;
+        }
+    }
     void Update()
     {
         if(start ==true)
         {
+            RateControl();
             if (Time.time > nextSpawn)
             {
                 nextStepSayac -= Time.deltaTime;
