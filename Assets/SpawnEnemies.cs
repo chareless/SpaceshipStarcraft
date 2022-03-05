@@ -165,7 +165,7 @@ public class SpawnEnemies : MonoBehaviour
                                 gameMusic.Stop();
                                 bossAlive = true;
                                 infoSayac = 3;
-                                nextStepSayac = 250f;
+                                nextStepSayac = 150f;
                                 Instantiate(boss1, new Vector3(0f, 15f, 0f), transform.rotation);
                             }
                             if (Status.wave == 6)
@@ -175,7 +175,7 @@ public class SpawnEnemies : MonoBehaviour
                                 gameMusic.Stop();
                                 bossAlive = true;
                                 infoSayac = 3;
-                                nextStepSayac = 350f;
+                                nextStepSayac = 300f;
                                 Instantiate(boss2, new Vector3(12f, 7.5f, 0f), transform.rotation);
                             }
                             if (Status.wave == 9)

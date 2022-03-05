@@ -107,7 +107,7 @@ public class BossLaser : MonoBehaviour
             if(endSayac<=0)
             {
                 fireSayac = 2f;
-                endSayac = 2f;
+                endSayac = 1f;
                 Sayac = 10f;
                 randCreated = false;
             }

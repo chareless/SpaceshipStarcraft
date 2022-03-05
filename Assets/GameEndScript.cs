@@ -39,9 +39,15 @@ public class GameEndScript : MonoBehaviour
         endScore = Status.score;
         scoreText.text = endScore.ToString();
 
-        if (LoadData.loadedHigh < endScore)
+        if (LoadData.loadedHigh < endScore && SpawnEnemies.isArcade==false)
         {
             PlayerPrefs.SetInt("Highscore", endScore);
+            PlayerPrefs.Save();
+        }
+
+        if (LoadData.loadedArcHigh < endScore && SpawnEnemies.isArcade==true)
+        {
+            PlayerPrefs.SetInt("ArcHighscore", endScore);
             PlayerPrefs.Save();
         }
     }

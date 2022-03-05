@@ -21,15 +21,15 @@ public class SpawnMinis : MonoBehaviour
     {
         if (Status.wave == 3)
         {
-            spawnRate = 1.3f;
+            spawnRate = 1.2f;
         }
         if (Status.wave == 6)
         {
-            spawnRate = 1.2f;
+            spawnRate = 1.1f;
         }
         if (Status.wave == 9)
         {
-            spawnRate = 1f;
+            spawnRate = 0.9f;
         }
     }
     void Update()

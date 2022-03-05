@@ -20,7 +20,7 @@ public class BossStats : MonoBehaviour
         }
         if (Status.wave == 9)
         {
-            health = 10000;
+            health = 15000;
         }
     }
 
@@ -57,7 +57,7 @@ public class BossStats : MonoBehaviour
                 {
                     transform.position = new Vector3(0, 0, 0);
                     stop = true;
-                    health = 10000;
+                    health = 15000;
                     SpawnMinis.start = true;
                 }
             }

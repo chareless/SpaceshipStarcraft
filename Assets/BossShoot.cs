@@ -15,7 +15,7 @@ public class BossShoot : MonoBehaviour
     {
         sourceAudio = gameObject.GetComponent<AudioSource>();
         Sayac = 5f;
-        moveSayac = 20f;
+        moveSayac = 18f;
     }
     public void Shoots()
     {
@@ -26,7 +26,7 @@ public class BossShoot : MonoBehaviour
             rgbr.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
             sourceAudio.PlayOneShot(shootSound);
             Destroy(bulletr, 1f);
-            Sayac = 2.75f;
+            Sayac = 2f;
         }
     }
 

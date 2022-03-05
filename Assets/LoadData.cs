@@ -14,6 +14,7 @@ public class LoadData : MonoBehaviour
     public static int loadedKill;
     public static int loadedShip;
     public static int loadedHigh;
+    public static int loadedArcHigh;
     public static int loadedCoin;
     public static string loadedMyShips;
     public static void killCheck()
@@ -99,6 +100,18 @@ public class LoadData : MonoBehaviour
         }
     }
 
+    public static void arcadeScoreCheck()
+    {
+        if (PlayerPrefs.GetInt("ArcHighscore") != 0)
+        {
+            loadedArcHigh = PlayerPrefs.GetInt("ArcHighscore");
+        }
+        else
+        {
+            loadedArcHigh = 0;
+        }
+    }
+
     public static void coinCheck()
     {
         if (PlayerPrefs.GetInt("Coin") != 0)
@@ -132,6 +145,7 @@ public class LoadData : MonoBehaviour
         killCheck();
         waveCheck();
         highscoreCheck();
+        arcadeScoreCheck();
         coinCheck();
         shopCheck();
     }
