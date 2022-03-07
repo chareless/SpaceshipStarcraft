@@ -286,12 +286,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endScore: 0
+  timer: 0
   scoreText: {fileID: 1109896220}
   waveSpawner: {fileID: 848113083}
   WinSound: {fileID: 699154037}
   LoseSound: {fileID: 895093166}
   GameSound: {fileID: 1254701211}
   BossSound: {fileID: 1025829560}
+  ButtonMain: {fileID: 1845166468}
+  ButtonQuit: {fileID: 287946649}
 --- !u!225 &93473072
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -11373,12 +11376,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endScore: 0
+  timer: 0
   scoreText: {fileID: 883101166}
   waveSpawner: {fileID: 848113083}
   WinSound: {fileID: 699154037}
   LoseSound: {fileID: 895093166}
   GameSound: {fileID: 1254701211}
   BossSound: {fileID: 1025829560}
+  ButtonMain: {fileID: 321353481}
+  ButtonQuit: {fileID: 617993700}
 --- !u!225 &1807638293
 CanvasGroup:
   m_ObjectHideFlags: 0

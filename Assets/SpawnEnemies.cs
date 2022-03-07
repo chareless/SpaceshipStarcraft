@@ -256,23 +256,31 @@ public class SpawnEnemies : MonoBehaviour
                 {
                     if(destroyedEnemy<=50)
                     {
-                        spawnRate = Random.Range(1f, 1.5f);
+                        spawnRate = Random.Range(1.25f, 1.5f);
                     }
                     if (destroyedEnemy > 50 && destroyedEnemy <=100)
                     {
-                        spawnRate = Random.Range(0.75f, 1.25f);
+                        spawnRate = Random.Range(1f, 1.25f);
                     }
                     if (destroyedEnemy > 100 && destroyedEnemy <= 500)
                     {
-                        spawnRate = Random.Range(0.5f, 1f);
+                        spawnRate = Random.Range(0.75f, 1f);
                     }
                     if (destroyedEnemy > 500 && destroyedEnemy <= 1000)
                     {
-                        spawnRate = Random.Range(0.25f, 0.75f);
+                        spawnRate = Random.Range(0.5f, 0.75f);
                     }
-                    if (destroyedEnemy > 1000)
+                    if (destroyedEnemy > 1000 && destroyedEnemy <= 1500)
                     {
-                        spawnRate = Random.Range(0.1f, 0.5f);
+                        spawnRate = Random.Range(0.4f, 0.5f);
+                    }
+                    if (destroyedEnemy > 1500 && destroyedEnemy <=2000)
+                    {
+                        spawnRate = Random.Range(0.3f, 0.4f);
+                    }
+                    if (destroyedEnemy > 2000)
+                    {
+                        spawnRate = Random.Range(0.1f, 0.3f);
                     }
 
                     nextSpawn = Time.time + spawnRate;
@@ -293,7 +301,7 @@ public class SpawnEnemies : MonoBehaviour
                     }
                     spawnedEnemy++;
 
-                    if((int)playTimeSayac % 10==0)
+                    if((int)playTimeSayac % 20==0)
                     {
                         StartMenu.coin += 1;
                         SaveData.saveCoin();

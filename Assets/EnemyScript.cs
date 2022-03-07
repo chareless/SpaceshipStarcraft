@@ -106,5 +106,10 @@ public class EnemyScript : MonoBehaviour
                 health -= 1;
             }
         }
+
+        if(collision.gameObject.tag=="enemybullet")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

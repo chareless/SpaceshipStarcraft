@@ -32,6 +32,7 @@ public class StartMenu : MonoBehaviour
     public GameObject SelectShipCanvas;
     public GameObject DefaultCanvas;
     public GameObject ShopCanvas;
+    public GameObject ScoreCanvas;
     public AudioSource clickSound;
     public AudioClip nextClip;
     public AudioClip backClip;
@@ -110,6 +111,7 @@ public class StartMenu : MonoBehaviour
     {
         MainMenuCanvas.SetActive(false);
         DefaultCanvas.SetActive(false);
+        ScoreCanvas.SetActive(false);
         ShopCanvas.SetActive(true);
         PlayNextButtonSound();
     }
@@ -124,7 +126,8 @@ public class StartMenu : MonoBehaviour
     {
         MainMenuCanvas.SetActive(false);
         OptionsMenuCanvas.SetActive(true);
-        if(Application.targetFrameRate==60)
+        ScoreCanvas.SetActive(false);
+        if (Application.targetFrameRate==60)
         {
             button60b.interactable = false;
             button90b.interactable = true;
@@ -141,6 +144,7 @@ public class StartMenu : MonoBehaviour
     {
         StartMenuCanvas.SetActive(false);
         DefaultCanvas.SetActive(false);
+        ScoreCanvas.SetActive(false);
         SelectShipCanvas.SetActive(true);
         PlayNextButtonSound();
         saveGameFile = false;
@@ -163,6 +167,7 @@ public class StartMenu : MonoBehaviour
         StartMenuCanvas.SetActive(false);
         SelectShipCanvas.SetActive(false);
         ShopCanvas.SetActive(false);
+        ScoreCanvas.SetActive(true);
         PlayBackButtonSound();
     }
 
@@ -193,6 +198,7 @@ public class StartMenu : MonoBehaviour
         LoadValues();
         OptionsMenuCanvas.SetActive(false);
         MainMenuCanvas.SetActive(true);
+        ScoreCanvas.SetActive(true);
         PlayNextButtonSound();
     }
 
@@ -200,6 +206,7 @@ public class StartMenu : MonoBehaviour
     {
         StartMenuCanvas.SetActive(false);
         DefaultCanvas.SetActive(false);
+        ScoreCanvas.SetActive(false);
         SelectShipCanvas.SetActive(true);
         SpawnEnemies.isArcade = true;
         PlayNextButtonSound();
@@ -386,6 +393,7 @@ public class StartMenu : MonoBehaviour
     public void MoneyControl()
     {
         coin = LoadData.loadedCoin;
+        coinText.text = coin.ToString() + " C";
     }
 
     public void ship1Button()
