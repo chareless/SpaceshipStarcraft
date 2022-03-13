@@ -60,17 +60,18 @@ public class StartMenu : MonoBehaviour
     public Text ship7PriceText;
     public Text ship8PriceText;
 
+    public Button rewButton;
     void Start()
     {
         maxFPS = 60;
         saveGameFile = false;
         shipClicked = false;
         ownships = "s1s2";
-        ship3Price = 200;
-        ship4Price = 250;
-        ship5Price = 300;
-        ship6Price = 400;
-        ship7Price = 500;
+        ship3Price = 250;
+        ship4Price = 300;
+        ship5Price = 400;
+        ship6Price = 500;
+        ship7Price = 1000;
         ship8Price = 1000000;
 
         LoadValues();
@@ -80,6 +81,7 @@ public class StartMenu : MonoBehaviour
         fpsText.text = Application.targetFrameRate.ToString();
         coinText.text = coin.ToString() + " C";
     }
+
     public void PlayNextButtonSound()
     {
         clickSound.PlayOneShot(nextClip);

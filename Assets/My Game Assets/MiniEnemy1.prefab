@@ -123,6 +123,7 @@ MonoBehaviour:
   health: 1
   carpti: 0
   control: 0
+  particle: {fileID: 2464922707875993706, guid: 946bc97005e3c94499090176e40c7532, type: 3}
 --- !u!82 &-4853021282074974513
 AudioSource:
   m_ObjectHideFlags: 0

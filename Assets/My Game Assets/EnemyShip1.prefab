@@ -76,6 +76,7 @@ MonoBehaviour:
   health: 1
   carpti: 0
   control: 0
+  particle: {fileID: 2464922707875993706, guid: 946bc97005e3c94499090176e40c7532, type: 3}
 --- !u!114 &7305607820947016889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +263,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5212642467122959179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -0.669, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -371,3 +372,4 @@ MonoBehaviour:
   health: 1
   carpti: 0
   control: 0
+  particle: {fileID: 0}

@@ -31,6 +31,7 @@ public class Status : MonoBehaviour
     public static int score;
     public GameObject[] players;
     public GameObject gameOverCanvas;
+    public GameObject particle;
     public static float attackSpeed;
     public AudioClip levelSound;
     public AudioClip boomSound;
@@ -64,7 +65,7 @@ public class Status : MonoBehaviour
             
             CreateShip();
         }
-        sourceAudio = gameObject.GetComponent<AudioSource>();
+        sourceAudio = GetComponentInChildren<AudioSource>();
     }
 
     void CreateShip()
@@ -215,6 +216,7 @@ public class Status : MonoBehaviour
 
         if(health<=0)
         {
+            Instantiate(particle, transform.position, Quaternion.identity);
             health = 0;
             Destroy(gameObject);
             gameOverCanvas.SetActive(true);
@@ -223,7 +225,7 @@ public class Status : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "enemybullet")
+        if (collision.gameObject.tag == "enemybullet")
         {
             sourceAudio.PlayOneShot(boomSound);
             GetDamage(5);

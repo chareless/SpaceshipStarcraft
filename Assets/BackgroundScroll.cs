@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BackgroundScroll : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class BackgroundScroll : MonoBehaviour
         seed = -3;
         speed = Convert.ToInt32(StartMenu.speedValue);
     }
+
     void Update()
     {
         speed= Convert.ToInt32(StartMenu.speedValue);

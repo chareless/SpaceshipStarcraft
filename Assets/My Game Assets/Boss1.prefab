@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stop: 0
-  bulletSound: {fileID: 0}
+  particle: {fileID: 8006806535066416036, guid: 31fe3a6304d3b804aacb4a65196938a1, type: 3}
 --- !u!50 &3420348341212233308
 Rigidbody2D:
   serializedVersion: 4

@@ -11,6 +11,7 @@ public class EnemyScript : MonoBehaviour
     public int health = 1;
     public bool carpti = false;
     public bool control = false;
+    public GameObject particle;
     void Start()
     {
         enemyRb = GetComponentInParent<Rigidbody2D>();
@@ -72,6 +73,7 @@ public class EnemyScript : MonoBehaviour
         }
         if(health<=0)
         {
+            Instantiate(particle,transform.position,Quaternion.identity);
             if(carpti==false)
             {
                 SpawnEnemies.destroyedEnemy++;

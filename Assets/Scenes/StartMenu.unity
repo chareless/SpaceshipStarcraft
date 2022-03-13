@@ -991,7 +991,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 300 C
+  m_Text: 400 C
 --- !u!222 &151167412
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2264,6 +2264,7 @@ MonoBehaviour:
   ship6PriceText: {fileID: 1666698996}
   ship7PriceText: {fileID: 1045028860}
   ship8PriceText: {fileID: 416646936}
+  rewButton: {fileID: 0}
 --- !u!4 &342829937
 Transform:
   m_ObjectHideFlags: 0
@@ -6032,7 +6033,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 250 C
+  m_Text: 300 C
 --- !u!222 &1029405363
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6246,7 +6247,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 500 C
+  m_Text: 1000 C
 --- !u!222 &1045028861
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7815,7 +7816,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 200 C
+  m_Text: 250 C
 --- !u!222 &1302189297
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9127,7 +9128,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 400 C
+  m_Text: 500 C
 --- !u!222 &1666698997
 CanvasRenderer:
   m_ObjectHideFlags: 0

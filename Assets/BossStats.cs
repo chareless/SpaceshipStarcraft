@@ -6,7 +6,7 @@ public class BossStats : MonoBehaviour
 {
     public bool stop;
     public static int health;
-
+    public GameObject particle;
     void Start()
     {
         stop = false;
@@ -73,6 +73,7 @@ public class BossStats : MonoBehaviour
             Status.Points(25*Status.playerLevel);
             if(health<=0)
             {
+                Instantiate(particle, transform.position, Quaternion.identity);
                 Status.BossPoints();
                 Status.totalKill++;
                 Status.totalBossKill++;
