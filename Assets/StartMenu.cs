@@ -11,21 +11,29 @@ using UnityEngine.UI;
 public class StartMenu : MonoBehaviour
 {
     public Text highScoreText;
-    public Text arcHighScoreText;
+    public Text arcEndlessHighScoreText;
+    public Text arcLaserHighScoreText;
+    public Text arcNoGunsHighScoreText;
     public Text versionText;
     public Text volumeText;
     public Text fpsText;
     public Text speedText;
     public Text coinText;
+    public Text ship3PriceText;
+    public Text ship4PriceText;
+    public Text ship5PriceText;
+    public Text ship6PriceText;
+    public Text ship7PriceText;
+    public Text ship8PriceText;
     public Button continueButton;
     public Button arcadeButton;
     public Button button60b;
     public Button button90b;
     public Button[] ships;
-    public GameObject[] objectShips;
     public Button[] shopShips;
     public Slider volumeSlider;
     public Slider speedSlider;
+    public GameObject[] objectShips;
     public GameObject MainMenuCanvas;
     public GameObject StartMenuCanvas;
     public GameObject OptionsMenuCanvas;
@@ -33,34 +41,28 @@ public class StartMenu : MonoBehaviour
     public GameObject DefaultCanvas;
     public GameObject ShopCanvas;
     public GameObject ScoreCanvas;
+    public GameObject ArcadeCanvas;
     public AudioSource clickSound;
     public AudioClip nextClip;
     public AudioClip backClip;
-    public static int maxFPS;
-    public static float volumeValue;
-    public static float speedValue;
-    public static bool saveGameFile;
-    public bool shipClicked;
-
     public AudioClip purchase;
     public AudioClip cancel;
-    public static int coin;
     public static string ownships;
     public static string[] Myships = new string[10];
+    public static float volumeValue;
+    public static float speedValue;
+    public static int maxFPS;
+    public static int coin;
     public static int ship3Price;
     public static int ship4Price;
     public static int ship5Price;
     public static int ship6Price;
     public static int ship7Price;
     public static int ship8Price;
-    public Text ship3PriceText;
-    public Text ship4PriceText;
-    public Text ship5PriceText;
-    public Text ship6PriceText;
-    public Text ship7PriceText;
-    public Text ship8PriceText;
+    public float timer = 0.1f;
+    public static bool saveGameFile;
+    public bool shipClicked;
 
-    public Button rewButton;
     void Start()
     {
         maxFPS = 60;
@@ -77,7 +79,9 @@ public class StartMenu : MonoBehaviour
         LoadValues();
         versionText.text = Application.version;
         highScoreText.text = LoadData.loadedHigh.ToString();
-        arcHighScoreText.text = LoadData.loadedArcHigh.ToString();
+        arcEndlessHighScoreText.text = LoadData.loadedArcEndlessHigh.ToString();
+        arcLaserHighScoreText.text = LoadData.loadedArcLaserHigh.ToString();
+        arcNoGunsHighScoreText.text = LoadData.loadedArcNoGunsHigh.ToString();
         fpsText.text = Application.targetFrameRate.ToString();
         coinText.text = coin.ToString() + " C";
     }
@@ -106,6 +110,10 @@ public class StartMenu : MonoBehaviour
     {
         MainMenuCanvas.SetActive(false);
         StartMenuCanvas.SetActive(true);
+        SpawnEnemies.isStoryMode = false;
+        SpawnEnemies.isArcadeEndless = false;
+        SpawnEnemies.isArcadeLaser = false;
+        SpawnEnemies.isArcadeNoGuns = false;
         PlayNextButtonSound();
     }
 
@@ -113,7 +121,6 @@ public class StartMenu : MonoBehaviour
     {
         MainMenuCanvas.SetActive(false);
         DefaultCanvas.SetActive(false);
-        ScoreCanvas.SetActive(false);
         ShopCanvas.SetActive(true);
         PlayNextButtonSound();
     }
@@ -128,7 +135,6 @@ public class StartMenu : MonoBehaviour
     {
         MainMenuCanvas.SetActive(false);
         OptionsMenuCanvas.SetActive(true);
-        ScoreCanvas.SetActive(false);
         if (Application.targetFrameRate==60)
         {
             button60b.interactable = false;
@@ -142,21 +148,27 @@ public class StartMenu : MonoBehaviour
         PlayNextButtonSound();
     }
 
+    public void ShowScores()
+    {
+        MainMenuCanvas.SetActive(false);
+        ScoreCanvas.SetActive(true);
+        PlayNextButtonSound();
+    }
+
     public void NewGame()
     {
         StartMenuCanvas.SetActive(false);
         DefaultCanvas.SetActive(false);
-        ScoreCanvas.SetActive(false);
         SelectShipCanvas.SetActive(true);
         PlayNextButtonSound();
         saveGameFile = false;
-        SpawnEnemies.isArcade = false;
+        SpawnEnemies.isStoryMode = true;
     }
 
     public void Continue()
     {
         saveGameFile = true;
-        SpawnEnemies.isArcade = false;
+        SpawnEnemies.isStoryMode = true;
         PlayNextButtonSound();
         SceneManager.LoadScene("SampleScene");
     }
@@ -164,12 +176,13 @@ public class StartMenu : MonoBehaviour
     public void BackButton()
     {
         MainMenuCanvas.SetActive(true);
+        ArcadeCanvas.SetActive(false);
         DefaultCanvas.SetActive(true);
         OptionsMenuCanvas.SetActive(false);
         StartMenuCanvas.SetActive(false);
         SelectShipCanvas.SetActive(false);
         ShopCanvas.SetActive(false);
-        ScoreCanvas.SetActive(true);
+        ScoreCanvas.SetActive(false);
         PlayBackButtonSound();
     }
 
@@ -200,17 +213,41 @@ public class StartMenu : MonoBehaviour
         LoadValues();
         OptionsMenuCanvas.SetActive(false);
         MainMenuCanvas.SetActive(true);
-        ScoreCanvas.SetActive(true);
         PlayNextButtonSound();
     }
 
     public void ArcadeButton()
     {
         StartMenuCanvas.SetActive(false);
+        ArcadeCanvas.SetActive(true);
+        PlayNextButtonSound();
+        saveGameFile = false;
+    }
+
+    public void ArcadeEndlessModeButton()
+    {
+        ArcadeCanvas.SetActive(false);
         DefaultCanvas.SetActive(false);
-        ScoreCanvas.SetActive(false);
         SelectShipCanvas.SetActive(true);
-        SpawnEnemies.isArcade = true;
+        SpawnEnemies.isArcadeEndless = true;
+        PlayNextButtonSound();
+    }
+
+    public void ArcadeLaserModeButton()
+    {
+        ArcadeCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+        SelectShipCanvas.SetActive(true);
+        SpawnEnemies.isArcadeLaser = true;
+        PlayNextButtonSound();
+    }
+
+    public void ArcadeNoGunsModeButton()
+    {
+        ArcadeCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+        SelectShipCanvas.SetActive(true);
+        SpawnEnemies.isArcadeNoGuns = true;
         PlayNextButtonSound();
     }
 
@@ -230,7 +267,7 @@ public class StartMenu : MonoBehaviour
         {
             arcadeButton.interactable = false;
         }
-        if (PlayerPrefs.GetInt("End") == 1)
+        else if (PlayerPrefs.GetInt("End") == 1)
         {
             arcadeButton.interactable = true;
         }
@@ -256,7 +293,7 @@ public class StartMenu : MonoBehaviour
             button60b.interactable = false;
             button90b.interactable = true;
         }
-        if (Application.targetFrameRate == 90)
+        else if (Application.targetFrameRate == 90)
         {
             button90b.interactable = false;
             button60b.interactable = true;
@@ -401,7 +438,6 @@ public class StartMenu : MonoBehaviour
     public void ship1Button()
     {
         Status.ship = 1;
-        shipClicked = true;
         for(int i=0;i<8;i++)
         {
             if(i!=Status.ship-1)
@@ -410,11 +446,11 @@ public class StartMenu : MonoBehaviour
             }
         }
         PlayNextButtonSound();
+        shipClicked = true;
     }
     public void ship2Button()
     {
         Status.ship = 2;
-        shipClicked = true;
         for (int i = 0; i < 8; i++)
         {
             if (i != Status.ship - 1)
@@ -423,11 +459,11 @@ public class StartMenu : MonoBehaviour
             }
         }
         PlayNextButtonSound();
+        shipClicked = true;
     }
     public void ship3Button()
     {
         Status.ship = 3;
-        shipClicked = true;
         for (int i = 0; i < 8; i++)
         {
             if (i != Status.ship - 1)
@@ -436,12 +472,12 @@ public class StartMenu : MonoBehaviour
             }
         }
         PlayNextButtonSound();
+        shipClicked = true;
     }
 
     public void ship4Button()
     {
         Status.ship = 4;
-        shipClicked = true;
         for (int i = 0; i < 8; i++)
         {
             if (i != Status.ship - 1)
@@ -450,12 +486,12 @@ public class StartMenu : MonoBehaviour
             }
         }
         PlayNextButtonSound();
+        shipClicked = true;
     }
 
     public void ship5Button()
     {
         Status.ship = 5;
-        shipClicked = true;
         for (int i = 0; i < 8; i++)
         {
             if (i != Status.ship - 1)
@@ -464,12 +500,12 @@ public class StartMenu : MonoBehaviour
             }
         }
         PlayNextButtonSound();
+        shipClicked = true;
     }
 
     public void ship6Button()
     {
         Status.ship = 6;
-        shipClicked = true;
         for (int i = 0; i < 8; i++)
         {
             if (i != Status.ship - 1)
@@ -478,12 +514,12 @@ public class StartMenu : MonoBehaviour
             }
         }
         PlayNextButtonSound();
+        shipClicked = true;
     }
 
     public void ship7Button()
     {
         Status.ship = 7;
-        shipClicked = true;
         for (int i = 0; i < 8; i++)
         {
             if (i != Status.ship - 1)
@@ -492,12 +528,12 @@ public class StartMenu : MonoBehaviour
             }
         }
         PlayNextButtonSound();
+        shipClicked = true;
     }
 
     public void ship8Button()
     {
         Status.ship = 8;
-        shipClicked = true;
         for (int i = 0; i < 8; i++)
         {
             if (i != Status.ship - 1)
@@ -506,6 +542,7 @@ public class StartMenu : MonoBehaviour
             }
         }
         PlayNextButtonSound();
+        shipClicked = true;
     }
 
     public void ship3ShopButton()
@@ -639,7 +676,12 @@ public class StartMenu : MonoBehaviour
         ShopControl();
         if (shipClicked == true)
         {
-            SceneManager.LoadScene("SampleScene");
+            timer -= Time.deltaTime;
+            if(timer<=0)
+            {
+                SceneManager.LoadScene("SampleScene");
+            }
+           
         }
     }
 }

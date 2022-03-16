@@ -14,11 +14,11 @@ public class BossStats : MonoBehaviour
         {
             health = 1000;
         }
-        if (Status.wave == 6)
+        else if (Status.wave == 6)
         {
             health = 5000;
         }
-        if (Status.wave == 9)
+        else if (Status.wave == 9)
         {
             health = 15000;
         }

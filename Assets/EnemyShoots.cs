@@ -41,56 +41,56 @@ public class EnemyShoots : MonoBehaviour
                 Shoots();
             }
         }
-        if (Status.wave == 2)
+        else if (Status.wave == 2)
         {
             if (randomShoot < 12)
             {
                 Shoots();
             }
         }
-        if (Status.wave == 3)
+        else if (Status.wave == 3)
         {
             if (randomShoot < 15)
             {
                 Shoots();
             }
         }
-        if (Status.wave == 4)
+        else if (Status.wave == 4)
         {
             if (randomShoot < 17)
             {
                 Shoots();
             }
         }
-        if (Status.wave == 5)
+        else if (Status.wave == 5)
         {
             if (randomShoot < 20)
             {
                 Shoots();
             }
         }
-        if (Status.wave == 6)
+        else if (Status.wave == 6)
         {
             if (randomShoot < 22)
             {
                 Shoots();
             }
         }
-        if (Status.wave == 7)
+        else if (Status.wave == 7)
         {
             if (randomShoot < 25)
             {
                 Shoots();
             }
         }
-        if (Status.wave == 8)
+        else if (Status.wave == 8)
         {
             if (randomShoot < 27)
             {
                 Shoots();
             }
         }
-        if (Status.wave == 9)
+        else if (Status.wave == 9)
         {
             if (randomShoot < 30)
             {

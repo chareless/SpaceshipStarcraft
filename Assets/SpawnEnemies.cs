@@ -13,6 +13,7 @@ public class SpawnEnemies : MonoBehaviour
     public GameObject boss3;
     public GameObject endCanvas;
     public GameObject gameOverCanvas;
+    public GameObject laserSpawner;
     public Text waveText;
     public Text infoText;
     public Text timeText;
@@ -26,10 +27,14 @@ public class SpawnEnemies : MonoBehaviour
     public static int destroyedEnemy;
     public static int spawnedEnemy;
     public static int completeGame = 0;
+    public static int laserTime;
     public static bool bossAlive;
     public static bool bossControl;
     public static bool gameEnd;
-    public static bool isArcade;
+    public static bool isStoryMode;
+    public static bool isArcadeEndless;
+    public static bool isArcadeLaser;
+    public static bool isArcadeNoGuns;
     public string bossName;
     public AudioSource gameMusic;
     public AudioSource bossMusic;
@@ -56,39 +61,39 @@ public class SpawnEnemies : MonoBehaviour
         {
             waveCount = 50;
         }
-        if (Status.wave == 2)
+        else if (Status.wave == 2)
         {
             waveCount = 75;
         }
-        if (Status.wave == 3)
+        else if (Status.wave == 3)
         {
             waveCount = 100;
         }
-        if (Status.wave == 4)
+        else if (Status.wave == 4)
         {
             waveCount = 70;
         }
-        if (Status.wave == 5)
+        else if (Status.wave == 5)
         {
             waveCount = 85;
         }
-        if (Status.wave == 6)
+        else if (Status.wave == 6)
         {
             waveCount = 100;
         }
-        if (Status.wave == 7)
+        else if (Status.wave == 7)
         {
             waveCount = 80;
         }
-        if (Status.wave== 8)
+        else if (Status.wave== 8)
         {
             waveCount = 100;
         }
-        if (Status.wave == 9)
+        else if (Status.wave == 9)
         {
             waveCount = 120;
         }
-        if (Status.wave == 10)
+        else if (Status.wave == 10)
         {
             gameEnd = true;
             endCanvas.SetActive(true);
@@ -96,9 +101,15 @@ public class SpawnEnemies : MonoBehaviour
             PlayerPrefs.SetInt("End", completeGame);
             PlayerPrefs.Save();
         }
-        if(isArcade==true)
+
+        if(isStoryMode!=true)
         {
             waveCount = 0;
+        }
+
+        if(isArcadeLaser!=false)
+        {
+            Destroy(laserSpawner);
         }
     }
 
@@ -123,12 +134,12 @@ public class SpawnEnemies : MonoBehaviour
             bossName = "Dimention Gate";
             timeText.text = System.Convert.ToString((int)nextStepSayac);
         }
-        if (Status.wave == 6 && bossAlive==true)
+        else if (Status.wave == 6 && bossAlive==true)
         {
             bossName = "Black Worm";
             timeText.text = System.Convert.ToString((int)nextStepSayac);
         }
-        if (Status.wave == 9 && bossAlive==true)
+        else if (Status.wave == 9 && bossAlive==true)
         {
             bossName = "Dark Matter";
             timeText.text = System.Convert.ToString((int)nextStepSayac);
@@ -145,7 +156,7 @@ public class SpawnEnemies : MonoBehaviour
     void Update()
     {
         playTimeSayac += Time.deltaTime;
-        if (isArcade != true)
+        if(isStoryMode == true)
         {
             LevelTextUpdate();
             waveCounts();
@@ -246,7 +257,7 @@ public class SpawnEnemies : MonoBehaviour
 
             }
         }
-        if(isArcade==true)
+        if(isArcadeEndless == true)
         {
             if (Time.time > nextSpawn)
             {
@@ -254,54 +265,212 @@ public class SpawnEnemies : MonoBehaviour
                 waveText.text = "";
                 if (nextStepSayac < 0)
                 {
-                    if(destroyedEnemy<=50)
+                    if(spawnedEnemy<=50)
                     {
                         spawnRate = Random.Range(1.25f, 1.5f);
                     }
-                    if (destroyedEnemy > 50 && destroyedEnemy <=100)
+                    else if (spawnedEnemy > 50 && spawnedEnemy <=100)
                     {
                         spawnRate = Random.Range(1f, 1.25f);
                     }
-                    if (destroyedEnemy > 100 && destroyedEnemy <= 500)
+                    else if (spawnedEnemy > 100 && spawnedEnemy <= 500)
                     {
                         spawnRate = Random.Range(0.75f, 1f);
                     }
-                    if (destroyedEnemy > 500 && destroyedEnemy <= 1000)
+                    else if (spawnedEnemy > 500 && spawnedEnemy <= 1000)
                     {
                         spawnRate = Random.Range(0.5f, 0.75f);
                     }
-                    if (destroyedEnemy > 1000 && destroyedEnemy <= 1500)
+                    else if (spawnedEnemy > 1000 && spawnedEnemy <= 1250)
                     {
                         spawnRate = Random.Range(0.4f, 0.5f);
                     }
-                    if (destroyedEnemy > 1500 && destroyedEnemy <=2000)
+                    else if (spawnedEnemy > 1250 && spawnedEnemy <=1500)
                     {
                         spawnRate = Random.Range(0.3f, 0.4f);
                     }
-                    if (destroyedEnemy > 2000)
+                    else if (spawnedEnemy > 1500 && spawnedEnemy <= 1750)
                     {
-                        spawnRate = Random.Range(0.1f, 0.3f);
+                        spawnRate = Random.Range(0.2f, 0.3f);
+                    }
+                    else if (spawnedEnemy > 1750 && spawnedEnemy <= 2000)
+                    {
+                        spawnRate = Random.Range(0.1f, 0.2f);
+                    }
+                    else if (spawnedEnemy > 2000)
+                    {
+                        spawnRate = Random.Range(0.1f, 0.1f);
                     }
 
                     nextSpawn = Time.time + spawnRate;
                     int random = Random.Range(-3, 5);
-                    int randomShip = Random.Range(0, 2);
+                    int randomShip = Random.Range(0, 3);
 
                     if (randomShip == 0)
                     {
                         Instantiate(ship1, transform.position - new Vector3(random, 0f, 0f), transform.rotation);
                     }
-                    if (randomShip == 1)
+                    else if (randomShip == 1)
                     {
                         Instantiate(ship2, transform.position - new Vector3(random, 0f, 0f), transform.rotation);
                     }
-                    if (randomShip == 2)
+                    else if (randomShip == 2)
                     {
                         Instantiate(ship3, transform.position - new Vector3(random, 0f, 0f), transform.rotation);
                     }
                     spawnedEnemy++;
 
                     if((int)playTimeSayac % 20==0)
+                    {
+                        StartMenu.coin += 1;
+                        SaveData.saveCoin();
+                    }
+                }
+            }
+        }
+        if(isArcadeLaser == true)
+        {
+            if (Time.time > nextSpawn)
+            {
+                nextStepSayac -= Time.deltaTime;
+                waveText.text = "";
+                if (nextStepSayac < 0)
+                {
+                    if (spawnedEnemy <= 50)
+                    {
+                        spawnRate = Random.Range(1.25f, 1.5f);
+                        laserTime = 22;
+                    }
+                    else if (spawnedEnemy > 50 && spawnedEnemy <= 100)
+                    {
+                        spawnRate = Random.Range(1f, 1.25f);
+                        laserTime = 20;
+                    }
+                    else if (spawnedEnemy > 100 && spawnedEnemy <= 500)
+                    {
+                        spawnRate = Random.Range(0.75f, 1f);
+                        laserTime = 17;
+                    }
+                    else if (spawnedEnemy > 500 && spawnedEnemy <= 1000)
+                    {
+                        spawnRate = Random.Range(0.5f, 0.75f);
+                        laserTime = 15;
+                    }
+                    else if (spawnedEnemy > 1000 && spawnedEnemy <= 1250)
+                    {
+                        spawnRate = Random.Range(0.4f, 0.5f);
+                        laserTime = 14;
+                    }
+                    else if (spawnedEnemy > 1250 && spawnedEnemy <= 1500)
+                    {
+                        spawnRate = Random.Range(0.3f, 0.4f);
+                        laserTime = 13;
+                    }
+                    else if (spawnedEnemy > 1500 && spawnedEnemy <= 1750)
+                    {
+                        spawnRate = Random.Range(0.2f, 0.3f);
+                        laserTime = 12;
+                    }
+                    else if (spawnedEnemy > 1750 && spawnedEnemy <=2000)
+                    {
+                        spawnRate = Random.Range(0.1f, 0.2f);
+                        laserTime = 11;
+                    }
+                    else if(spawnedEnemy>2000)
+                    {
+                        spawnRate = Random.Range(0.1f, 0.1f);
+                        laserTime = 10;
+                    }
+
+                    nextSpawn = Time.time + spawnRate;
+                    int random = Random.Range(-3, 5);
+                    int randomShip = Random.Range(0, 3);
+
+                    if (randomShip == 0)
+                    {
+                        Instantiate(ship1, transform.position - new Vector3(random, 0f, 0f), transform.rotation);
+                    }
+                    else if (randomShip == 1)
+                    {
+                        Instantiate(ship2, transform.position - new Vector3(random, 0f, 0f), transform.rotation);
+                    }
+                    else if (randomShip == 2)
+                    {
+                        Instantiate(ship3, transform.position - new Vector3(random, 0f, 0f), transform.rotation);
+                    }
+                    spawnedEnemy++;
+                    laserSpawner.SetActive(true);
+                    if ((int)playTimeSayac % 20 == 0)
+                    {
+                        StartMenu.coin += 1;
+                        SaveData.saveCoin();
+                    }
+                }
+            }
+        }
+        if(isArcadeNoGuns == true)
+        {
+            if (Time.time > nextSpawn)
+            {
+                nextStepSayac -= Time.deltaTime;
+                waveText.text = "";
+                if (nextStepSayac < 0)
+                {
+                    if (spawnedEnemy <= 50)
+                    {
+                        spawnRate = Random.Range(1.25f, 1.5f);
+                    }
+                    else if (spawnedEnemy > 50 && spawnedEnemy <= 100)
+                    {
+                        spawnRate = Random.Range(1f, 1.25f);
+                    }
+                    else if (spawnedEnemy > 100 && spawnedEnemy <= 500)
+                    {
+                        spawnRate = Random.Range(0.75f, 1f);
+                    }
+                    else if (spawnedEnemy > 500 && spawnedEnemy <= 1000)
+                    {
+                        spawnRate = Random.Range(0.5f, 0.75f);
+                    }
+                    else if (spawnedEnemy > 1000 && spawnedEnemy <= 1250)
+                    {
+                        spawnRate = Random.Range(0.4f, 0.5f);
+                    }
+                    else if (spawnedEnemy > 1250 && spawnedEnemy <= 1500)
+                    {
+                        spawnRate = Random.Range(0.3f, 0.4f);
+                    }
+                    else if (spawnedEnemy > 1500 && spawnedEnemy <= 1750)
+                    {
+                        spawnRate = Random.Range(0.2f, 0.3f);
+                    }
+                    else if (spawnedEnemy > 1750 && spawnedEnemy <= 2000)
+                    {
+                        spawnRate = Random.Range(0.1f, 0.2f);
+                    }
+                    else if (spawnedEnemy > 2000)
+                    {
+                        spawnRate = Random.Range(0.1f, 0.1f);
+                    }
+
+                    nextSpawn = Time.time + spawnRate;
+                    int random = Random.Range(-3, 5);
+                    int randomShip = Random.Range(0, 3);
+
+                    if (randomShip == 0)
+                    {
+                        Instantiate(ship1, transform.position - new Vector3(random, 0f, 0f), transform.rotation);
+                    }
+                    else if (randomShip == 1)
+                    {
+                        Instantiate(ship2, transform.position - new Vector3(random, 0f, 0f), transform.rotation);
+                    }
+                    else if (randomShip == 2)
+                    {
+                        Instantiate(ship3, transform.position - new Vector3(random, 0f, 0f), transform.rotation);
+                    }
+                    spawnedEnemy++;
+                    if ((int)playTimeSayac % 20 == 0)
                     {
                         StartMenu.coin += 1;
                         SaveData.saveCoin();

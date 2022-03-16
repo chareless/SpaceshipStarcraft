@@ -6,10 +6,25 @@ public class Movement : MonoBehaviour
 {
     public static float speedValue=10;
     public float speed;
+    public float Sayac;
+    public static float bulletForce = 40f;
+    public Transform firePoint;
+    public GameObject bullet;
+    public AudioClip laserSound;
+    AudioSource sourceAudio;
 
+    void Start()
+    {
+        sourceAudio = gameObject.GetComponent<AudioSource>();
+    }
     void Update()
     {
         transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+        if(SpawnEnemies.isArcadeNoGuns==true)
+        {
+            Sayac = 10f;
+        }
+        Sayac -= Time.deltaTime;
     }
 
     public void SagaGit()
@@ -23,5 +38,17 @@ public class Movement : MonoBehaviour
     public void Dur()
     {
         speed = 0;
+    }
+    public void Shoots()
+    {
+        if (Sayac <= 0)
+        {
+            GameObject bulletr = Instantiate(bullet, firePoint.position, firePoint.rotation);
+            Rigidbody2D rgbr = bulletr.GetComponent<Rigidbody2D>();
+            rgbr.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+            sourceAudio.PlayOneShot(laserSound);
+            Destroy(bulletr, 0.45f);
+            Sayac = Status.attackSpeed;
+        }
     }
 }

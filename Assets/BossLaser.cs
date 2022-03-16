@@ -30,6 +30,37 @@ public class BossLaser : MonoBehaviour
         bulletCreated = false;
     }
 
+    void randomPlaceArcade()
+    {
+        randShoot = Random.Range(0, 3);
+        if (randShoot == beforeShoot)
+        {
+            while (randShoot == beforeShoot)
+            {
+                randShoot = Random.Range(0, 3);
+            }
+        }
+
+        if (randShoot == 0)
+        {
+            GameObject before = Instantiate(beforeFire, firePoint.position - new Vector3(-0.2f, -0.5f), Quaternion.Euler(0, 0, 90));
+            Destroy(before, 5f);
+        }
+        else if (randShoot == 1)
+        {
+            GameObject before = Instantiate(beforeFire, firePoint2.position - new Vector3(-0.2f, -0.5f), Quaternion.Euler(0, 0, 90));
+            Destroy(before, 5f);
+        }
+        else if (randShoot == 2)
+        {
+            GameObject before = Instantiate(beforeFire, firePoint3.position - new Vector3(-0.2f, -0.5f), Quaternion.Euler(0, 0, 90));
+            Destroy(before, 5f);
+        }
+        randCreated = true;
+        beforeShoot = randShoot;
+        sourceAudio.PlayOneShot(laserFirstSound);
+    }
+
     void randomPlace()
     {
         randShoot = Random.Range(0, 3);
@@ -41,17 +72,17 @@ public class BossLaser : MonoBehaviour
             }
         }
 
-        if (randShoot == 0 )
+        if (randShoot == 0)
         {
-            GameObject before = Instantiate(beforeFire, firePoint.position - new Vector3(-0.5f, 0.2f), Quaternion.Euler(0,0,0));
+            GameObject before = Instantiate(beforeFire, firePoint.position - new Vector3(-0.5f, 0.2f), Quaternion.Euler(0, 0, 0));
             Destroy(before, 5f);
         }
-        if (randShoot == 1 )
+        else if (randShoot == 1)
         {
-            GameObject before = Instantiate(beforeFire, firePoint2.position- new Vector3(0.5f,0.2f), Quaternion.Euler(0, 180, 0));
+            GameObject before = Instantiate(beforeFire, firePoint2.position - new Vector3(0.5f, 0.2f), Quaternion.Euler(0, 180, 0));
             Destroy(before, 5f);
         }
-        if (randShoot == 2 )
+        else if (randShoot == 2)
         {
             GameObject before = Instantiate(beforeFire, firePoint3.position - new Vector3(-0.2f, -0.5f), Quaternion.Euler(0, 0, 90));
             Destroy(before, 5f);
@@ -60,23 +91,24 @@ public class BossLaser : MonoBehaviour
         beforeShoot = randShoot;
         sourceAudio.PlayOneShot(laserFirstSound);
     }
-    public void Shoots()
+
+    void ShootsArcade()
     {
-        if(bulletCreated==false)
+        if (bulletCreated == false)
         {
-            if(randShoot==0)
+            if (randShoot == 0)
             {
-                GameObject bulletr = Instantiate(bullet, firePoint.position - new Vector3(0.6f, 13.5f), firePoint.rotation);
+                GameObject bulletr = Instantiate(bullet, firePoint.position - new Vector3(0.35f, 13.5f), firePoint.rotation);
                 Destroy(bulletr, 3f);
                 bulletCreated = true;
             }
-            if(randShoot==1)
+            else if (randShoot == 1)
             {
-                GameObject bulletr = Instantiate(bullet, firePoint2.position - new Vector3(0, 13.5f), firePoint.rotation);
+                GameObject bulletr = Instantiate(bullet, firePoint2.position - new Vector3(0.35f, 13.5f), firePoint.rotation);
                 Destroy(bulletr, 3f);
                 bulletCreated = true;
             }
-            if(randShoot==2)
+            else if (randShoot == 2)
             {
                 GameObject bulletr = Instantiate(bullet, firePoint3.position - new Vector3(0.35f, 13.5f), firePoint.rotation);
                 Destroy(bulletr, 3f);
@@ -85,32 +117,98 @@ public class BossLaser : MonoBehaviour
             sourceAudio.PlayOneShot(laserSound);
         }
     }
-    void Update()
+    public void Shoots()
+    {
+        if(bulletCreated==false)
+        {
+            if (randShoot == 0)
+            {
+                GameObject bulletr = Instantiate(bullet, firePoint.position - new Vector3(0.6f, 13.5f), firePoint.rotation);
+                Destroy(bulletr, 3f);
+                bulletCreated = true;
+            }
+            else if (randShoot == 1)
+            {
+                GameObject bulletr = Instantiate(bullet, firePoint2.position - new Vector3(0, 13.5f), firePoint.rotation);
+                Destroy(bulletr, 3f);
+                bulletCreated = true;
+            }
+            else if (randShoot == 2)
+            {
+                GameObject bulletr = Instantiate(bullet, firePoint3.position - new Vector3(0.35f, 13.5f), firePoint.rotation);
+                Destroy(bulletr, 3f);
+                bulletCreated = true;
+            }
+            sourceAudio.PlayOneShot(laserSound);
+        }
+    }
+
+    void StoryUpdate()
     {
         Sayac -= Time.deltaTime;
-        if(Sayac<=10)
+        if (Sayac <= 10)
         {
-            if(randCreated==false)
+            if (randCreated == false)
             {
                 randomPlace();
                 bulletCreated = false;
             }
             fireSayac -= Time.deltaTime;
-            if(fireSayac<=0)
+            if (fireSayac <= 0)
             {
                 Shoots();
             }
-            if(fireSayac<=-3)
+            if (fireSayac <= -3)
             {
                 endSayac -= Time.deltaTime;
             }
-            if(endSayac<=0)
+            if (endSayac <= 0)
             {
                 fireSayac = 2f;
                 endSayac = 1f;
                 Sayac = 10f;
                 randCreated = false;
             }
+        }
+    }
+
+    void ArcadeUpdate()
+    {
+        Sayac -= Time.deltaTime;
+        if (Sayac <= 10)
+        {
+            if (randCreated == false)
+            {
+                randomPlaceArcade();
+                bulletCreated = false;
+            }
+            fireSayac -= Time.deltaTime;
+            if (fireSayac <= 0)
+            {
+                ShootsArcade();
+            }
+            if (fireSayac <= -3)
+            {
+                endSayac -= Time.deltaTime;
+            }
+            if (endSayac <= 0)
+            {
+                fireSayac = 2f;
+                endSayac = 1f;
+                Sayac = SpawnEnemies.laserTime;
+                randCreated = false;
+            }
+        }
+    }
+    void Update()
+    {
+        if(SpawnEnemies.isArcadeLaser==true)
+        {
+            ArcadeUpdate();
+        }
+        else
+        {
+            StoryUpdate();
         }
     }
 }

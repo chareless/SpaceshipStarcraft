@@ -14,7 +14,9 @@ public class LoadData : MonoBehaviour
     public static int loadedKill;
     public static int loadedShip;
     public static int loadedHigh;
-    public static int loadedArcHigh;
+    public static int loadedArcEndlessHigh;
+    public static int loadedArcLaserHigh;
+    public static int loadedArcNoGunsHigh;
     public static int loadedCoin;
     public static string loadedMyShips;
     public static void killCheck()
@@ -100,15 +102,39 @@ public class LoadData : MonoBehaviour
         }
     }
 
-    public static void arcadeScoreCheck()
+    public static void arcadeEndlessScoreCheck()
     {
-        if (PlayerPrefs.GetInt("ArcHighscore") != 0)
+        if (PlayerPrefs.GetInt("ArcEndlessHighscore") != 0)
         {
-            loadedArcHigh = PlayerPrefs.GetInt("ArcHighscore");
+            loadedArcEndlessHigh = PlayerPrefs.GetInt("ArcEndlessHighscore");
         }
         else
         {
-            loadedArcHigh = 0;
+            loadedArcEndlessHigh = 0;
+        }
+    }
+
+    public static void arcadeLaserScoreCheck()
+    {
+        if (PlayerPrefs.GetInt("ArcLaserHighscore") != 0)
+        {
+            loadedArcLaserHigh = PlayerPrefs.GetInt("ArcLaserHighscore");
+        }
+        else
+        {
+            loadedArcLaserHigh = 0;
+        }
+    }
+
+    public static void arcadeNoGunsScoreCheck()
+    {
+        if (PlayerPrefs.GetInt("ArcNoGunsHighscore") != 0)
+        {
+            loadedArcNoGunsHigh = PlayerPrefs.GetInt("ArcNoGunsHighscore");
+        }
+        else
+        {
+            loadedArcNoGunsHigh = 0;
         }
     }
 
@@ -145,7 +171,9 @@ public class LoadData : MonoBehaviour
         killCheck();
         waveCheck();
         highscoreCheck();
-        arcadeScoreCheck();
+        arcadeEndlessScoreCheck();
+        arcadeLaserScoreCheck();
+        arcadeNoGunsScoreCheck();
         coinCheck();
         shopCheck();
     }

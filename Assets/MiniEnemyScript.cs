@@ -69,11 +69,13 @@ public class MiniEnemyScript : MonoBehaviour
 
         if (collision.gameObject.tag == "enemycannon")
         {
+            Instantiate(particle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
 
         if (collision.gameObject.tag == "enemylaser")
         {
+            Instantiate(particle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

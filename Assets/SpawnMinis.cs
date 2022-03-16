@@ -23,11 +23,11 @@ public class SpawnMinis : MonoBehaviour
         {
             spawnRate = 1.2f;
         }
-        if (Status.wave == 6)
+        else if (Status.wave == 6)
         {
             spawnRate = 1.1f;
         }
-        if (Status.wave == 9)
+        else if (Status.wave == 9)
         {
             spawnRate = 0.9f;
         }

@@ -86,30 +86,45 @@ public class Status : MonoBehaviour
 
     void PlayerStats()
     {
-        if(playerLevel==1)
+        if(playerLevel == 1)
         {
             damage = 5;
             attackSpeed = 0.5f;
         }
-        if (playerLevel == 2)
+        else if (playerLevel == 2)
         {
             damage = 10;
             attackSpeed = 0.45f;
         }
-        if (playerLevel == 3)
+        else if (playerLevel == 3)
         {
             damage = 15;
             attackSpeed = 0.4f;
         }
-        if (playerLevel == 4)
+        else if (playerLevel == 4)
         {
             damage = 20;
             attackSpeed = 0.35f;
         }
-        if (playerLevel == 5)
+        else if (playerLevel == 5)
         {
             damage = 25;
             attackSpeed = 0.3f;
+        }
+        else if (playerLevel == 6)
+        {
+            damage = 30;
+            attackSpeed = 0.25f;
+        }
+        else if (playerLevel == 7)
+        {
+            damage = 35;
+            attackSpeed = 0.22f;
+        }
+        else if (playerLevel == 8)
+        {
+            damage = 40;
+            attackSpeed = 0.2f;
         }
     }
 
@@ -134,19 +149,34 @@ public class Status : MonoBehaviour
             playerLevel = 2;
             Regen();
         }
-        if (playerLevel == 2 && totalKill == 400)
+        else if(playerLevel == 2 && totalKill == 400)
         {
             playerLevel = 3;
             Regen();
         }
-        if (playerLevel == 3 && totalKill == 600)
+        else if(playerLevel == 3 && totalKill == 600)
         {
             playerLevel = 4;
             Regen();
         }
-        if (playerLevel == 4 && totalKill == 800)
+        else if(playerLevel == 4 && totalKill == 800)
         {
             playerLevel = 5;
+            Regen();
+        }
+        else if(playerLevel == 5 && totalKill == 1000)
+        {
+            playerLevel = 6;
+            Regen();
+        }
+        else if (playerLevel == 6 && totalKill == 1500)
+        {
+            playerLevel = 7;
+            Regen();
+        }
+        else if (playerLevel == 7 && totalKill == 2000)
+        {
+            playerLevel = 8;
             Regen();
         }
     }
@@ -192,6 +222,20 @@ public class Status : MonoBehaviour
             score = 0;
         }
     }
+
+    public static void PointsNoGuns()
+    {
+        score += playerLevel;
+    }
+
+    public static void DestroyNoGunsPoints()
+    {
+        score -= 100 * playerLevel;
+        if (score <= 0)
+        {
+            score = 0;
+        }
+    }
     public static void BossPoints()
     {
         score += 1000 * playerLevel*wave;
@@ -221,6 +265,11 @@ public class Status : MonoBehaviour
             Destroy(gameObject);
             gameOverCanvas.SetActive(true);
         }
+
+        if(SpawnEnemies.isArcadeNoGuns==true)
+        {
+            PointsNoGuns();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -240,14 +289,29 @@ public class Status : MonoBehaviour
         }
         if (collision.gameObject.tag == "enemylaser")
         {
-            GetDamage(200);
-            Points(-500);
+            if(SpawnEnemies.isArcadeLaser==true)
+            {
+                GetDamage(100);
+                Points(-250);
+            }
+            else
+            {
+                GetDamage(200);
+                Points(-500);
+            }
         }
         if(collision.gameObject.tag=="enemy")
         {
             sourceAudio.PlayOneShot(collisionSound);
-            GetDamage(5*playerLevel);
-            DestroyPoints();
+            GetDamage(5 * playerLevel);
+            if (SpawnEnemies.isArcadeNoGuns==true)
+            {
+                DestroyNoGunsPoints();
+            }
+            else
+            {
+                DestroyPoints();
+            }
         }
     }
 }

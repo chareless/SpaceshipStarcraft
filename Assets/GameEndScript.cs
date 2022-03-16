@@ -24,6 +24,7 @@ public class GameEndScript : MonoBehaviour
 
     void Start()
     {
+        Status.score += (Status.health) * 5;
         timer = 2f;
         saveScore();
         waveSpawner.SetActive(false);
@@ -44,15 +45,27 @@ public class GameEndScript : MonoBehaviour
         endScore = Status.score;
         scoreText.text = endScore.ToString();
 
-        if (LoadData.loadedHigh < endScore && SpawnEnemies.isArcade==false)
+        if (LoadData.loadedHigh < endScore && SpawnEnemies.isStoryMode==true)
         {
             PlayerPrefs.SetInt("Highscore", endScore);
             PlayerPrefs.Save();
         }
 
-        if (LoadData.loadedArcHigh < endScore && SpawnEnemies.isArcade==true)
+        if (LoadData.loadedArcEndlessHigh < endScore && SpawnEnemies.isArcadeEndless==true)
         {
-            PlayerPrefs.SetInt("ArcHighscore", endScore);
+            PlayerPrefs.SetInt("ArcEndlessHighscore", endScore);
+            PlayerPrefs.Save();
+        }
+
+        if (LoadData.loadedArcLaserHigh < endScore && SpawnEnemies.isArcadeLaser == true)
+        {
+            PlayerPrefs.SetInt("ArcLaserHighscore", endScore);
+            PlayerPrefs.Save();
+        }
+
+        if (LoadData.loadedArcNoGunsHigh < endScore && SpawnEnemies.isArcadeNoGuns == true)
+        {
+            PlayerPrefs.SetInt("ArcNoGunsHighscore", endScore);
             PlayerPrefs.Save();
         }
     }

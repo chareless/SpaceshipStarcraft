@@ -24,39 +24,39 @@ public class EnemyScript : MonoBehaviour
         {
             speed = -16;
         }
-        if (Status.wave == 2)
+        else if (Status.wave == 2)
         {
             speed = -16;
         }
-        if (Status.wave == 3)
+        else if (Status.wave == 3)
         {
             speed = -16;
         }
-        if (Status.wave == 4)
+        else if (Status.wave == 4)
         {
             speed = -18;
         }
-        if (Status.wave == 5)
+        else if (Status.wave == 5)
         {
             speed = -18;
         }
-        if (Status.wave== 6)
+        else if (Status.wave== 6)
         {
             speed = -18;
         }
-        if (Status.wave == 7)
+        else if (Status.wave == 7)
         {
             speed = -20;
         }
-        if (Status.wave == 8)
+        else if (Status.wave == 8)
         {
             speed = -20;
         }
-        if (Status.wave == 9)
+        else if (Status.wave == 9)
         {
             speed = -20;
         }
-        if (Status.wave >= 10)
+        else if (Status.wave >= 10)
         {
             speed = -20;
         }
@@ -70,6 +70,11 @@ public class EnemyScript : MonoBehaviour
         {
             SpawnEnemies.destroyedEnemy++;
             Destroy(gameObject);
+            if(SpawnEnemies.isArcadeNoGuns==true)
+            {
+                Status.totalKill++;
+                Status.KillPoints();
+            }
         }
         if(health<=0)
         {
@@ -111,7 +116,14 @@ public class EnemyScript : MonoBehaviour
 
         if(collision.gameObject.tag=="enemybullet")
         {
+            Instantiate(particle, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "enemylaser")
+        {
+            Instantiate(particle, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }
