@@ -68,6 +68,12 @@ public class GameEndScript : MonoBehaviour
             PlayerPrefs.SetInt("ArcNoGunsHighscore", endScore);
             PlayerPrefs.Save();
         }
+
+        if (LoadData.loadedArcOneHPHigh < endScore && SpawnEnemies.isArcadeOneHP == true)
+        {
+            PlayerPrefs.SetInt("ArcOneHPHighscore", endScore);
+            PlayerPrefs.Save();
+        }
     }
     public void menuButton()
     {

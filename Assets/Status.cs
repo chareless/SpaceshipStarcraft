@@ -65,6 +65,10 @@ public class Status : MonoBehaviour
             
             CreateShip();
         }
+        if(SpawnEnemies.isArcadeOneHP==true)
+        {
+            health = 1;
+        }
         sourceAudio = GetComponentInChildren<AudioSource>();
     }
 
@@ -223,7 +227,7 @@ public class Status : MonoBehaviour
         }
     }
 
-    public static void PointsNoGuns()
+    public static void PointsArcade()
     {
         score += playerLevel;
     }
@@ -266,9 +270,9 @@ public class Status : MonoBehaviour
             gameOverCanvas.SetActive(true);
         }
 
-        if(SpawnEnemies.isArcadeNoGuns==true)
+        if(SpawnEnemies.isStoryMode!=true && PauseMenuScript.GamePaused!=true)
         {
-            PointsNoGuns();
+            PointsArcade();
         }
     }
 

@@ -14,6 +14,7 @@ public class StartMenu : MonoBehaviour
     public Text arcEndlessHighScoreText;
     public Text arcLaserHighScoreText;
     public Text arcNoGunsHighScoreText;
+    public Text arcOneHPHighScoreText;
     public Text versionText;
     public Text volumeText;
     public Text fpsText;
@@ -82,6 +83,7 @@ public class StartMenu : MonoBehaviour
         arcEndlessHighScoreText.text = LoadData.loadedArcEndlessHigh.ToString();
         arcLaserHighScoreText.text = LoadData.loadedArcLaserHigh.ToString();
         arcNoGunsHighScoreText.text = LoadData.loadedArcNoGunsHigh.ToString();
+        arcOneHPHighScoreText.text = LoadData.loadedArcOneHPHigh.ToString();
         fpsText.text = Application.targetFrameRate.ToString();
         coinText.text = coin.ToString() + " C";
     }
@@ -114,6 +116,7 @@ public class StartMenu : MonoBehaviour
         SpawnEnemies.isArcadeEndless = false;
         SpawnEnemies.isArcadeLaser = false;
         SpawnEnemies.isArcadeNoGuns = false;
+        SpawnEnemies.isArcadeOneHP = false;
         PlayNextButtonSound();
     }
 
@@ -248,6 +251,15 @@ public class StartMenu : MonoBehaviour
         DefaultCanvas.SetActive(false);
         SelectShipCanvas.SetActive(true);
         SpawnEnemies.isArcadeNoGuns = true;
+        PlayNextButtonSound();
+    }
+
+    public void ArcadeOneHPModeButton()
+    {
+        ArcadeCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+        SelectShipCanvas.SetActive(true);
+        SpawnEnemies.isArcadeOneHP = true;
         PlayNextButtonSound();
     }
 

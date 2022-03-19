@@ -35,6 +35,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void MenuButton()
     {
+        GamePaused = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("StartMenu");
     }

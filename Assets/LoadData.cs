@@ -17,6 +17,7 @@ public class LoadData : MonoBehaviour
     public static int loadedArcEndlessHigh;
     public static int loadedArcLaserHigh;
     public static int loadedArcNoGunsHigh;
+    public static int loadedArcOneHPHigh;
     public static int loadedCoin;
     public static string loadedMyShips;
     public static void killCheck()
@@ -138,6 +139,18 @@ public class LoadData : MonoBehaviour
         }
     }
 
+    public static void arcadeOneHPScoreCheck()
+    {
+        if (PlayerPrefs.GetInt("ArcOneHPHighscore") != 0)
+        {
+            loadedArcOneHPHigh = PlayerPrefs.GetInt("ArcOneHPHighscore");
+        }
+        else
+        {
+            loadedArcOneHPHigh = 0;
+        }
+    }
+
     public static void coinCheck()
     {
         if (PlayerPrefs.GetInt("Coin") != 0)
@@ -174,6 +187,7 @@ public class LoadData : MonoBehaviour
         arcadeEndlessScoreCheck();
         arcadeLaserScoreCheck();
         arcadeNoGunsScoreCheck();
+        arcadeOneHPScoreCheck();
         coinCheck();
         shopCheck();
     }

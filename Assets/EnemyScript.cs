@@ -70,7 +70,7 @@ public class EnemyScript : MonoBehaviour
         {
             SpawnEnemies.destroyedEnemy++;
             Destroy(gameObject);
-            if(SpawnEnemies.isArcadeNoGuns==true)
+            if(SpawnEnemies.isArcadeNoGuns==true && Status.health>0)
             {
                 Status.totalKill++;
                 Status.KillPoints();
