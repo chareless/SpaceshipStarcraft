@@ -13,12 +13,16 @@ public class Movement : MonoBehaviour
     public AudioClip laserSound;
     AudioSource sourceAudio;
 
+    public GameObject ship13;
+    public static float rotateCounter;
+
     void Start()
     {
         sourceAudio = gameObject.GetComponent<AudioSource>();
     }
     void Update()
     {
+        RotateShip();
         transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
         if(SpawnEnemies.isArcadeNoGuns==true)
         {
@@ -27,13 +31,37 @@ public class Movement : MonoBehaviour
         Sayac -= Time.deltaTime;
     }
 
+    public void RotateShip()
+    {
+        if (Status.ship == 13)
+        {
+            rotateCounter += Time.deltaTime * speed*30;
+            ship13.transform.rotation = Quaternion.Euler(0, 0, -rotateCounter);
+        }
+    }
+
     public void SagaGit()
     {
-        speed = 10f;
+        if(SpawnEnemies.isArcadeMirror == true || SpawnEnemies.isArcadeInsane == true )
+        {
+            speed = -10f;
+        }
+        else
+        {
+            speed = 10f;
+        }
     }
     public void SolaGit()
     {
-        speed = -10f;
+        if(SpawnEnemies.isArcadeMirror == true || SpawnEnemies.isArcadeInsane == true )
+        {
+            speed = 10f;
+        }
+        else
+        {
+            speed = -10f;
+        }
+        
     }
     public void Dur()
     {

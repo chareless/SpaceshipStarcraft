@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossLaser : MonoBehaviour
+public class LaserSpawner : MonoBehaviour
 {
     public float Sayac;
     public float fireSayac;
@@ -19,6 +19,7 @@ public class BossLaser : MonoBehaviour
     public AudioClip laserSound;
     public AudioClip laserFirstSound;
     AudioSource sourceAudio;
+
     void Start()
     {
         sourceAudio = gameObject.GetComponent<AudioSource>();
@@ -32,9 +33,9 @@ public class BossLaser : MonoBehaviour
     void RandomPlace()
     {
         randShoot = Random.Range(0, 3);
-        if(randShoot==beforeShoot)
+        if (randShoot == beforeShoot)
         {
-            while (randShoot==beforeShoot)
+            while (randShoot == beforeShoot)
             {
                 randShoot = Random.Range(0, 3);
             }
@@ -42,12 +43,12 @@ public class BossLaser : MonoBehaviour
 
         if (randShoot == 0)
         {
-            GameObject before = Instantiate(beforeFire, firePoint.position - new Vector3(-0.5f, 0.2f), Quaternion.Euler(0, 0, 0));
+            GameObject before = Instantiate(beforeFire, firePoint.position - new Vector3(-0.2f, -0.5f), Quaternion.Euler(0, 0, 90));
             Destroy(before, 5f);
         }
         else if (randShoot == 1)
         {
-            GameObject before = Instantiate(beforeFire, firePoint2.position - new Vector3(0.5f, 0.2f), Quaternion.Euler(0, 180, 0));
+            GameObject before = Instantiate(beforeFire, firePoint2.position - new Vector3(-0.2f, -0.5f), Quaternion.Euler(0, 0, 90));
             Destroy(before, 5f);
         }
         else if (randShoot == 2)
@@ -59,19 +60,20 @@ public class BossLaser : MonoBehaviour
         beforeShoot = randShoot;
         sourceAudio.PlayOneShot(laserFirstSound);
     }
-    public void Shoots()
+
+    void Shoots()
     {
-        if(bulletCreated==false)
+        if (bulletCreated == false)
         {
             if (randShoot == 0)
             {
-                GameObject bulletr = Instantiate(bullet, firePoint.position - new Vector3(0.6f, 13.5f), firePoint.rotation);
+                GameObject bulletr = Instantiate(bullet, firePoint.position - new Vector3(0.35f, 13.5f), firePoint.rotation);
                 Destroy(bulletr, 3f);
                 bulletCreated = true;
             }
             else if (randShoot == 1)
             {
-                GameObject bulletr = Instantiate(bullet, firePoint2.position - new Vector3(0, 13.5f), firePoint.rotation);
+                GameObject bulletr = Instantiate(bullet, firePoint2.position - new Vector3(0.35f, 13.5f), firePoint.rotation);
                 Destroy(bulletr, 3f);
                 bulletCreated = true;
             }
@@ -108,7 +110,7 @@ public class BossLaser : MonoBehaviour
             {
                 fireSayac = 2f;
                 endSayac = 1f;
-                Sayac = 10f;
+                Sayac = SpawnEnemies.laserTime;
                 randCreated = false;
             }
         }

@@ -10,5 +10,9 @@ public class CannonColliders : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+        if(collision.gameObject.tag=="enemylaser")
+        {
+            Destroy(gameObject);
+        }
     }
 }

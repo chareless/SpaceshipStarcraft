@@ -27,7 +27,7 @@ public class Status : MonoBehaviour
     public static int lastKill = 0;
     public static int lastBossKill = 0;
     public static int totalBossKill = 0;
-    public static int ship=1;
+    public static int ship;
     public static int score;
     public GameObject[] players;
     public GameObject gameOverCanvas;
@@ -41,10 +41,18 @@ public class Status : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = StartMenu.maxFPS;
         if(StartMenu.saveGameFile==false)
         {
             health = maxHealth;
-            wave = 1;
+            if(StartMenu.selectCheck==true)
+            {
+                wave = StartMenu.selectedWave;
+            }
+            else
+            {
+                wave = 1;
+            }
             playerLevel = 1;
             lastLevel = 1;
             totalKill = 0;
@@ -74,7 +82,7 @@ public class Status : MonoBehaviour
 
     void CreateShip()
     {
-        for(int i=0;i<8;i++)
+        for(int i=0;i<StartMenu.maxShipCount;i++)
         {
             if(i!=ship-1)
             {
@@ -85,7 +93,11 @@ public class Status : MonoBehaviour
 
     void Regen()
     {
-        health += (maxHealth - health) * 40 / 100;
+        if(SpawnEnemies.isArcadeOneHP!=true)
+        {
+            health += (maxHealth - health) * 40 / 100;
+        }
+        
     }
 
     void PlayerStats()
@@ -287,16 +299,25 @@ public class Status : MonoBehaviour
         }
         if(collision.gameObject.tag == "enemycannon")
         {
-            GetDamage(100);
-            Points(-200);
+            if(SpawnEnemies.isArcadeShock==true || SpawnEnemies.isArcadeRapidfire==true || SpawnEnemies.isArcadeInsane==true)
+            {
+                GetDamage(50);
+                Points(-300);
+            }
+            else
+            {
+                GetDamage(100);
+                Points(-200);
+            }
+           
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "enemylaser")
         {
-            if(SpawnEnemies.isArcadeLaser==true)
+            if(SpawnEnemies.isArcadeLaser==true || SpawnEnemies.isArcadeRapidfire==true || SpawnEnemies.isArcadeInsane==true)
             {
                 GetDamage(100);
-                Points(-250);
+                Points(-750);
             }
             else
             {
@@ -307,7 +328,11 @@ public class Status : MonoBehaviour
         if(collision.gameObject.tag=="enemy")
         {
             sourceAudio.PlayOneShot(collisionSound);
-            GetDamage(5 * playerLevel);
+            if(SpawnEnemies.isArcadeDefend!=true)
+            {
+                GetDamage(5 * playerLevel);
+            }
+            
             if (SpawnEnemies.isArcadeNoGuns==true)
             {
                 DestroyNoGunsPoints();

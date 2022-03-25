@@ -18,6 +18,12 @@ public class LoadData : MonoBehaviour
     public static int loadedArcLaserHigh;
     public static int loadedArcNoGunsHigh;
     public static int loadedArcOneHPHigh;
+    public static int loadedArcShockHigh;
+    public static int loadedArcRapidfireHigh;
+    public static int loadedArcSpeedHigh;
+    public static int loadedArcDefendHigh;
+    public static int loadedArcMirrorHigh;
+    public static int loadedArcInsaneHigh;
     public static int loadedCoin;
     public static string loadedMyShips;
     public static void killCheck()
@@ -151,6 +157,78 @@ public class LoadData : MonoBehaviour
         }
     }
 
+    public static void arcadeShockScoreCheck()
+    {
+        if (PlayerPrefs.GetInt("ArcShockHighscore") != 0)
+        {
+            loadedArcOneHPHigh = PlayerPrefs.GetInt("ArcShockHighscore");
+        }
+        else
+        {
+            loadedArcShockHigh = 0;
+        }
+    }
+
+    public static void arcadeRapidfireScoreCheck()
+    {
+        if (PlayerPrefs.GetInt("ArcRapidfireHighscore") != 0)
+        {
+            loadedArcRapidfireHigh = PlayerPrefs.GetInt("ArcRapidfireHighscore");
+        }
+        else
+        {
+            loadedArcRapidfireHigh = 0;
+        }
+    }
+
+    public static void arcadeSpeedScoreCheck()
+    {
+        if (PlayerPrefs.GetInt("ArcSpeedHighscore") != 0)
+        {
+            loadedArcSpeedHigh = PlayerPrefs.GetInt("ArcSpeedHighscore");
+        }
+        else
+        {
+            loadedArcSpeedHigh = 0;
+        }
+    }
+
+    public static void arcadeDefendScoreCheck()
+    {
+        if (PlayerPrefs.GetInt("ArcDefendHighscore") != 0)
+        {
+            loadedArcDefendHigh = PlayerPrefs.GetInt("ArcDefendHighscore");
+        }
+        else
+        {
+            loadedArcDefendHigh = 0;
+        }
+    }
+
+    public static void arcadeMirrorScoreCheck()
+    {
+        if (PlayerPrefs.GetInt("ArcMirrorHighscore") != 0)
+        {
+            loadedArcMirrorHigh = PlayerPrefs.GetInt("ArcMirrorHighscore");
+        }
+        else
+        {
+            loadedArcMirrorHigh = 0;
+        }
+    }
+
+    public static void arcadeInsaneScoreCheck()
+    {
+        if (PlayerPrefs.GetInt("ArcInsaneHighscore") != 0)
+        {
+            loadedArcInsaneHigh = PlayerPrefs.GetInt("ArcInsaneHighscore");
+        }
+        else
+        {
+            loadedArcInsaneHigh = 0;
+        }
+    }
+
     public static void coinCheck()
     {
         if (PlayerPrefs.GetInt("Coin") != 0)
@@ -188,6 +266,11 @@ public class LoadData : MonoBehaviour
         arcadeLaserScoreCheck();
         arcadeNoGunsScoreCheck();
         arcadeOneHPScoreCheck();
+        arcadeShockScoreCheck();
+        arcadeDefendScoreCheck();
+        arcadeSpeedScoreCheck();
+        arcadeMirrorScoreCheck();
+        arcadeInsaneScoreCheck();
         coinCheck();
         shopCheck();
     }

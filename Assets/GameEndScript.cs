@@ -74,6 +74,42 @@ public class GameEndScript : MonoBehaviour
             PlayerPrefs.SetInt("ArcOneHPHighscore", endScore);
             PlayerPrefs.Save();
         }
+
+        if (LoadData.loadedArcShockHigh < endScore && SpawnEnemies.isArcadeShock == true)
+        {
+            PlayerPrefs.SetInt("ArcShockHighscore", endScore);
+            PlayerPrefs.Save();
+        }
+
+        if (LoadData.loadedArcRapidfireHigh < endScore && SpawnEnemies.isArcadeRapidfire == true)
+        {
+            PlayerPrefs.SetInt("ArcRapidfireHighscore", endScore);
+            PlayerPrefs.Save();
+        }
+
+        if (LoadData.loadedArcSpeedHigh < endScore && SpawnEnemies.isArcadeSpeed == true)
+        {
+            PlayerPrefs.SetInt("ArcSpeedHighscore", endScore);
+            PlayerPrefs.Save();
+        }
+
+        if (LoadData.loadedArcDefendHigh < endScore && SpawnEnemies.isArcadeDefend == true)
+        {
+            PlayerPrefs.SetInt("ArcDefendHighscore", endScore);
+            PlayerPrefs.Save();
+        }
+
+        if (LoadData.loadedArcMirrorHigh < endScore && SpawnEnemies.isArcadeMirror == true)
+        {
+            PlayerPrefs.SetInt("ArcMirrorHighscore", endScore);
+            PlayerPrefs.Save();
+        }
+
+        if (LoadData.loadedArcInsaneHigh < endScore && SpawnEnemies.isArcadeInsane == true)
+        {
+            PlayerPrefs.SetInt("ArcInsaneHighscore", endScore);
+            PlayerPrefs.Save();
+        }
     }
     public void menuButton()
     {

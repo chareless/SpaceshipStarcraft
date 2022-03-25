@@ -60,6 +60,10 @@ public class EnemyScript : MonoBehaviour
         {
             speed = -20;
         }
+        if(SpawnEnemies.isArcadeSpeed==true || SpawnEnemies.isArcadeInsane==true || SpawnEnemies.isArcadeDefend==true)
+        {
+            speed = -25;
+        }
     }
 
     void Update()
@@ -68,13 +72,25 @@ public class EnemyScript : MonoBehaviour
         sayac -= Time.deltaTime;
         if(sayac<=0 && alive==true)
         {
-            SpawnEnemies.destroyedEnemy++;
-            Destroy(gameObject);
+            if(SpawnEnemies.isArcadeDefend!=true && SpawnEnemies.isArcadeInsane!=true)
+            {
+                SpawnEnemies.destroyedEnemy++;
+                Destroy(gameObject);
+            }
+            else
+            {
+                SpawnEnemies.destroyedEnemy++;
+                Status.GetDamage(5 * Status.playerLevel);
+                Destroy(gameObject);
+            }
+
+            
             if(SpawnEnemies.isArcadeNoGuns==true && Status.health>0)
             {
                 Status.totalKill++;
                 Status.KillPoints();
             }
+
         }
         if(health<=0)
         {
@@ -93,6 +109,11 @@ public class EnemyScript : MonoBehaviour
                 SpawnEnemies.destroyedEnemy++;
                 alive = false;
                 Destroy(gameObject);
+                if(SpawnEnemies.isArcadeDefend==true || SpawnEnemies.isArcadeInsane==true)
+                {
+                    Status.totalKill++;
+                    Status.KillPoints();
+                }
            }
         }
     }
@@ -121,6 +142,12 @@ public class EnemyScript : MonoBehaviour
         }
 
         if (collision.gameObject.tag == "enemylaser")
+        {
+            Instantiate(particle, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "enemycannon")
         {
             Instantiate(particle, transform.position, Quaternion.identity);
             Destroy(gameObject);
