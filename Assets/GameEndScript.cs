@@ -47,6 +47,8 @@ public class GameEndScript : MonoBehaviour
 
         if (LoadData.loadedHigh < endScore && SpawnEnemies.isStoryMode==true)
         {
+            StartMenu.coin += 100;
+            SaveData.saveCoin();
             PlayerPrefs.SetInt("Highscore", endScore);
             PlayerPrefs.Save();
         }

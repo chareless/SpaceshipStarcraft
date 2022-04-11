@@ -253,6 +253,22 @@ public class LoadData : MonoBehaviour
         }
     }
 
+    public static void bonusCoinCheck()
+    {
+        if(PlayerPrefs.GetInt("BonusCoin") == 0)
+        {
+            if(loadedArcDefendHigh>0 && loadedArcEndlessHigh>0 && loadedArcInsaneHigh>0
+                && loadedArcLaserHigh>0 && loadedArcMirrorHigh>0 && loadedArcNoGunsHigh>0
+                && loadedArcOneHPHigh>0 && loadedArcRapidfireHigh>0 && loadedArcShockHigh>0
+                && loadedArcSpeedHigh>0)
+            {
+                StartMenu.coin += 100;
+                SaveData.saveCoin();
+                PlayerPrefs.SetInt("BonusCoin",1);
+            }
+        }
+    }
+
     public static void loadData()
     {
         scoreCheck();
@@ -273,6 +289,7 @@ public class LoadData : MonoBehaviour
         arcadeInsaneScoreCheck();
         coinCheck();
         shopCheck();
+        bonusCoinCheck();
     }
 
     public void Start()

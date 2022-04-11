@@ -113,14 +113,14 @@ public class StartMenu : MonoBehaviour
     {
         ship3Price = 250;
         ship4Price = 300;
-        ship5Price = 400;
-        ship6Price = 500;
-        ship7Price = 600;
+        ship5Price = 350;
+        ship6Price = 400;
+        ship7Price = 450;
         ship8Price = 1000000;
 
-        ship9Price = 350;
-        ship10Price = 400;
-        ship11Price = 500;
+        ship9Price = 500;
+        ship10Price = 550;
+        ship11Price = 600;
         ship12Price = 700;
         ship13Price = 1000;
     }

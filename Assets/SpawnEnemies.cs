@@ -390,7 +390,7 @@ public class SpawnEnemies : MonoBehaviour
                     }
                     spawnedEnemy++;
 
-                    if((int)playTimeSayac % 20==0)
+                    if((int)playTimeSayac % 15==0)
                     {
                         StartMenu.coin += 1;
                         SaveData.saveCoin();
@@ -469,7 +469,7 @@ public class SpawnEnemies : MonoBehaviour
                         Instantiate(ship3, transform.position - new Vector3(random, 0f, 0f), transform.rotation);
                     }
                     spawnedEnemy++;
-                    if ((int)playTimeSayac % 20 == 0)
+                    if ((int)playTimeSayac % 15 == 0)
                     {
                         StartMenu.coin += 1;
                         SaveData.saveCoin();
@@ -539,7 +539,7 @@ public class SpawnEnemies : MonoBehaviour
                         Instantiate(ship3, transform.position - new Vector3(random, 0f, 0f), transform.rotation);
                     }
                     spawnedEnemy++;
-                    if ((int)playTimeSayac % 20 == 0)
+                    if ((int)playTimeSayac % 15 == 0)
                     {
                         StartMenu.coin += 1;
                         SaveData.saveCoin();
@@ -610,7 +610,7 @@ public class SpawnEnemies : MonoBehaviour
                     }
                     spawnedEnemy++;
 
-                    if ((int)playTimeSayac % 20 == 0)
+                    if ((int)playTimeSayac % 15 == 0)
                     {
                         StartMenu.coin += 1;
                         SaveData.saveCoin();
@@ -689,7 +689,7 @@ public class SpawnEnemies : MonoBehaviour
                         Instantiate(ship3, transform.position - new Vector3(random, 0f, 0f), transform.rotation);
                     }
                     spawnedEnemy++;
-                    if ((int)playTimeSayac % 20 == 0)
+                    if ((int)playTimeSayac % 15 == 0)
                     {
                         StartMenu.coin += 1;
                         SaveData.saveCoin();
@@ -777,7 +777,7 @@ public class SpawnEnemies : MonoBehaviour
                         Instantiate(ship3, transform.position - new Vector3(random, 0f, 0f), transform.rotation);
                     }
                     spawnedEnemy++;
-                    if ((int)playTimeSayac % 20 == 0)
+                    if ((int)playTimeSayac % 15 == 0)
                     {
                         StartMenu.coin += 1;
                         SaveData.saveCoin();
@@ -848,7 +848,7 @@ public class SpawnEnemies : MonoBehaviour
                     }
                     spawnedEnemy++;
 
-                    if ((int)playTimeSayac % 20 == 0)
+                    if ((int)playTimeSayac % 15 == 0)
                     {
                         StartMenu.coin += 1;
                         SaveData.saveCoin();
@@ -919,7 +919,7 @@ public class SpawnEnemies : MonoBehaviour
                     }
                     spawnedEnemy++;
 
-                    if ((int)playTimeSayac % 20 == 0)
+                    if ((int)playTimeSayac % 15 == 0)
                     {
                         StartMenu.coin += 1;
                         SaveData.saveCoin();
@@ -990,7 +990,7 @@ public class SpawnEnemies : MonoBehaviour
                     }
                     spawnedEnemy++;
 
-                    if ((int)playTimeSayac % 20 == 0)
+                    if ((int)playTimeSayac % 15 == 0)
                     {
                         StartMenu.coin += 1;
                         SaveData.saveCoin();
@@ -1078,7 +1078,7 @@ public class SpawnEnemies : MonoBehaviour
                         Instantiate(ship3, transform.position - new Vector3(random, 0f, 0f), transform.rotation);
                     }
                     spawnedEnemy++;
-                    if ((int)playTimeSayac % 30 == 0)
+                    if ((int)playTimeSayac % 15 == 0)
                     {
                         StartMenu.coin += 1;
                         SaveData.saveCoin();
