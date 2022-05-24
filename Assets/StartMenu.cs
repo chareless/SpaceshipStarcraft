@@ -95,6 +95,11 @@ public class StartMenu : MonoBehaviour
     public GameObject ship13atshop;
     public GameObject ship13atselect;
     public static float rotateCounter;
+
+    public static int currentBG;
+    public static int savedBG;
+    public Sprite[] bgs;
+    public SpriteRenderer backGround;
     void Start()
     {
         timer = 0.1f;
@@ -215,9 +220,33 @@ public class StartMenu : MonoBehaviour
 
     public void Settings()
     {
+        currentBG = savedBG;
         MainMenuCanvas.SetActive(false);
         OptionsMenuCanvas.SetActive(true);
         PlayNextButtonSound();
+    }
+
+    public void NextBGButton()
+    {
+        currentBG++;
+        if(currentBG==8)
+        {
+            currentBG = 0;
+        }
+        backGround.sprite = bgs[currentBG];
+        PlayNextButtonSound();
+    }
+
+    public void PrevBGButton()
+    {
+        currentBG--;
+        if (currentBG == -1)
+        {
+            currentBG = 7;
+        }
+        backGround.sprite = bgs[currentBG];
+        PlayNextButtonSound();
+
     }
 
     public void ShowScores()
@@ -308,6 +337,7 @@ public class StartMenu : MonoBehaviour
 
     public void BackButton()
     {
+        backGround.sprite = bgs[savedBG];
         MainMenuCanvas.SetActive(true);
         ArcadeCanvas1.SetActive(false);
         ArcadeCanvas2.SetActive(false);
@@ -327,6 +357,8 @@ public class StartMenu : MonoBehaviour
 
     public void SaveButton()
     {
+        savedBG = currentBG;
+        PlayerPrefs.SetInt("BGNo", savedBG);
         volumeValue = volumeSlider.value;
         PlayerPrefs.SetFloat("VolumeValue", volumeValue);
         speedValue = speedSlider.value;
@@ -1213,6 +1245,12 @@ public class StartMenu : MonoBehaviour
         }
     }
 
+    public void BackGroundCheck()
+    {
+        savedBG = PlayerPrefs.GetInt("BGNo");
+        backGround.sprite = bgs[savedBG];
+    }
+
     public void LoadValues()
     {
         LoadData.loadData();
@@ -1234,6 +1272,8 @@ public class StartMenu : MonoBehaviour
         MoneyControl();
 
         ShopControl();
+
+        BackGroundCheck();
     }
 
     public void RotateShip()

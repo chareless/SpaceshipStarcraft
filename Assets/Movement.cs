@@ -20,8 +20,10 @@ public class Movement : MonoBehaviour
     {
         sourceAudio = gameObject.GetComponent<AudioSource>();
     }
+
     void Update()
     {
+        KeyboardControl();
         RotateShip();
         transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
         if(SpawnEnemies.isArcadeNoGuns==true)
@@ -29,6 +31,26 @@ public class Movement : MonoBehaviour
             Sayac = 10f;
         }
         Sayac -= Time.deltaTime;
+    }
+
+    void KeyboardControl()
+    {
+        if(Input.GetKeyDown("left") || Input.GetKeyDown("a"))
+        {
+            SolaGit();
+        }
+        if(Input.GetKeyDown("right") || Input.GetKeyDown("d"))
+        {
+            SagaGit();
+        }
+        if (Input.GetKeyUp("left")||Input.GetKeyUp("right") || Input.GetKeyUp("a") || Input.GetKeyUp("d"))
+        {
+            Dur();
+        }
+        if (Input.GetKey("space") || Input.GetKey("up") || Input.GetKey("w") && PauseMenuScript.GamePaused==false)
+        {
+            Shoots();
+        }
     }
 
     public void RotateShip()
