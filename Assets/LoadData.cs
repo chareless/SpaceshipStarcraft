@@ -26,6 +26,7 @@ public class LoadData : MonoBehaviour
     public static int loadedArcInsaneHigh;
     public static int loadedCoin;
     public static string loadedMyShips;
+    public static string loadedAchs;
     public static void killCheck()
     {
         if (PlayerPrefs.GetInt("Kill")!=0)
@@ -253,19 +254,15 @@ public class LoadData : MonoBehaviour
         }
     }
 
-    public static void bonusCoinCheck()
+    public static void achCheck()
     {
-        if(PlayerPrefs.GetInt("BonusCoin") == 0)
+        if (PlayerPrefs.GetString("Achievements") != "")
         {
-            if(loadedArcDefendHigh>0 && loadedArcEndlessHigh>0 && loadedArcInsaneHigh>0
-                && loadedArcLaserHigh>0 && loadedArcMirrorHigh>0 && loadedArcNoGunsHigh>0
-                && loadedArcOneHPHigh>0 && loadedArcRapidfireHigh>0 && loadedArcShockHigh>0
-                && loadedArcSpeedHigh>0)
-            {
-                StartMenu.coin += 100;
-                SaveData.saveCoin();
-                PlayerPrefs.SetInt("BonusCoin",1);
-            }
+            loadedAchs = PlayerPrefs.GetString("Achievements");
+        }
+        else
+        {
+            loadedAchs = "";
         }
     }
 
@@ -289,7 +286,7 @@ public class LoadData : MonoBehaviour
         arcadeInsaneScoreCheck();
         coinCheck();
         shopCheck();
-        bonusCoinCheck();
+        achCheck();
     }
 
     public void Start()

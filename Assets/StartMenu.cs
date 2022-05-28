@@ -61,6 +61,8 @@ public class StartMenu : MonoBehaviour
     public GameObject ScoreCanvas2;
     public GameObject ArcadeCanvas1;
     public GameObject ArcadeCanvas2;
+    public GameObject QuitCanvas;
+    public GameObject AchievementCanvas;
     public AudioSource clickSound;
     public AudioSource gameMusic;
     public AudioClip nextClip;
@@ -87,6 +89,7 @@ public class StartMenu : MonoBehaviour
     public static int ship12Price;
     public static int ship13Price;
     public static int maxShipCount = 13;
+
     public static bool saveGameFile;
     public bool shipClicked;
     public static bool selectCheck;
@@ -100,6 +103,13 @@ public class StartMenu : MonoBehaviour
     public static int savedBG;
     public Sprite[] bgs;
     public SpriteRenderer backGround;
+
+    public GameObject[] TestInfos;
+    public GameObject[] TestButtons;
+    public Image[] tests;
+    public Image[] infos;
+    public GameObject buttonBack;
+ 
     void Start()
     {
         timer = 0.1f;
@@ -112,6 +122,7 @@ public class StartMenu : MonoBehaviour
         LoadValues();
         versionText.text = Application.version;
         Application.targetFrameRate = maxFPS;
+        FileSave.TotalData();
     }
 
     public void MarketPrice()
@@ -134,17 +145,14 @@ public class StartMenu : MonoBehaviour
     {
         clickSound.PlayOneShot(nextClip);
     }
-
     public void PlayBackButtonSound()
     {
         clickSound.PlayOneShot(backClip);
     }
-
     public void PlayPurchaseSound()
     {
         clickSound.PlayOneShot(purchase);
     }
-
     public void PlayCancelSound()
     {
         clickSound.PlayOneShot(cancel);
@@ -169,7 +177,6 @@ public class StartMenu : MonoBehaviour
         selectedWave = 0;
         PlayNextButtonSound();
     }
-
     public void GoShop()
     {
         MainMenuCanvas.SetActive(false);
@@ -179,6 +186,80 @@ public class StartMenu : MonoBehaviour
         PlayNextButtonSound();
 
     }
+    public void QuitGame()
+    {
+        PlayBackButtonSound();
+        Application.Quit();
+    }
+    public void VoteButton()
+    {
+        PlayNextButtonSound();
+        Application.OpenURL("https://play.google.com/store/apps/details?id=com.saribayirdeniz.SpaceshipStarcraft");
+    }
+    public void AchievementButton()
+    {
+        MainMenuCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+        AchievementCanvas.SetActive(true);
+        PlayNextButtonSound();
+    }
+    public void Settings()
+    {
+        currentBG = savedBG;
+        MainMenuCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+        OptionsMenuCanvas.SetActive(true);
+        PlayNextButtonSound();
+    }
+    public void ShowScores()
+    {
+        MainMenuCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+        ScoreCanvas1.SetActive(true);
+        PlayNextButtonSound();
+    }
+    public void NewGame()
+    {
+        StartMenuCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+        SelectShipCanvas1.SetActive(true);
+        PlayNextButtonSound();
+        saveGameFile = false;
+        SpawnEnemies.isStoryMode = true;
+    }
+    public void Continue()
+    {
+        saveGameFile = true;
+        SpawnEnemies.isStoryMode = true;
+        PlayNextButtonSound();
+        SceneManager.LoadScene("SampleScene");
+    }
+    public void CancelQuit()
+    {
+        QuitCanvas.SetActive(false);
+        PlayNextButtonSound();
+    }
+    public void QuitButton()
+    {
+        QuitCanvas.SetActive(true);
+        PlayBackButtonSound();
+    }
+    public void ArcadeButton()
+    {
+        StartMenuCanvas.SetActive(false);
+        ArcadeCanvas1.SetActive(true);
+        PlayNextButtonSound();
+        saveGameFile = false;
+    }
+    public void SelectButton()
+    {
+        StartMenuCanvas.SetActive(false);
+        SelectCanvas.SetActive(true);
+        SpawnEnemies.isStoryMode = true;
+        saveGameFile = false;
+        PlayNextButtonSound();
+    }
+
 
     public void ShopPrevButton()
     {
@@ -196,7 +277,6 @@ public class StartMenu : MonoBehaviour
         }
         PlayBackButtonSound();
     }
-
     public void ShopNextButton()
     {
         if (ShopCanvas1.activeInHierarchy == true)
@@ -212,18 +292,21 @@ public class StartMenu : MonoBehaviour
         PlayNextButtonSound();
     }
 
-    public void QuitGame()
+    public void SaveDataButton()
     {
-        PlayBackButtonSound();
-        Application.Quit();
-    }
-
-    public void Settings()
-    {
-        currentBG = savedBG;
-        MainMenuCanvas.SetActive(false);
-        OptionsMenuCanvas.SetActive(true);
+        OptionsMenuCanvas.SetActive(false);
+        DefaultCanvas.SetActive(true);
+        MainMenuCanvas.SetActive(true);
         PlayNextButtonSound();
+        FileSave.SaveFile();
+    }
+    public void LoadDataButton()
+    {
+        OptionsMenuCanvas.SetActive(false);
+        DefaultCanvas.SetActive(true);
+        MainMenuCanvas.SetActive(true);
+        PlayNextButtonSound();
+        FileSave.LoadFile();
     }
 
     public void NextBGButton()
@@ -236,7 +319,6 @@ public class StartMenu : MonoBehaviour
         backGround.sprite = bgs[currentBG];
         PlayNextButtonSound();
     }
-
     public void PrevBGButton()
     {
         currentBG--;
@@ -249,19 +331,13 @@ public class StartMenu : MonoBehaviour
 
     }
 
-    public void ShowScores()
-    {
-        MainMenuCanvas.SetActive(false);
-        ScoreCanvas1.SetActive(true);
-        PlayNextButtonSound();
-    }
-
     public void ScorePrevButton()
     {
         if (ScoreCanvas1.activeInHierarchy == true)
         {
             ScoreCanvas1.SetActive(false);
             MainMenuCanvas.SetActive(true);
+            DefaultCanvas.SetActive(true);
         }
         else if (ScoreCanvas2.activeInHierarchy == true)
         {
@@ -270,7 +346,6 @@ public class StartMenu : MonoBehaviour
         }
         PlayBackButtonSound();
     }
-
     public void ScoreNextButton()
     {
         if (ScoreCanvas1.activeInHierarchy == true)
@@ -301,7 +376,6 @@ public class StartMenu : MonoBehaviour
         }
         PlayBackButtonSound();
     }
-
     public void SelectNextButton()
     {
         if (SelectShipCanvas1.activeInHierarchy == true)
@@ -317,28 +391,11 @@ public class StartMenu : MonoBehaviour
         PlayNextButtonSound();
     }
 
-    public void NewGame()
-    {
-        StartMenuCanvas.SetActive(false);
-        DefaultCanvas.SetActive(false);
-        SelectShipCanvas1.SetActive(true);
-        PlayNextButtonSound();
-        saveGameFile = false;
-        SpawnEnemies.isStoryMode = true;
-    }
-
-    public void Continue()
-    {
-        saveGameFile = true;
-        SpawnEnemies.isStoryMode = true;
-        PlayNextButtonSound();
-        SceneManager.LoadScene("SampleScene");
-    }
-
     public void BackButton()
     {
         backGround.sprite = bgs[savedBG];
         MainMenuCanvas.SetActive(true);
+        AchievementCanvas.SetActive(false);
         ArcadeCanvas1.SetActive(false);
         ArcadeCanvas2.SetActive(false);
         DefaultCanvas.SetActive(true);
@@ -354,7 +411,6 @@ public class StartMenu : MonoBehaviour
         ScoreCanvas2.SetActive(false);
         PlayBackButtonSound();
     }
-
     public void SaveButton()
     {
         savedBG = currentBG;
@@ -369,106 +425,9 @@ public class StartMenu : MonoBehaviour
         PlayerPrefs.SetInt("ChangeValues", 1);
         LoadValues();
         OptionsMenuCanvas.SetActive(false);
+        DefaultCanvas.SetActive(true);
         MainMenuCanvas.SetActive(true);
         PlayNextButtonSound();
-    }
-
-    public void ArcadeButton()
-    {
-        StartMenuCanvas.SetActive(false);
-        ArcadeCanvas1.SetActive(true);
-        PlayNextButtonSound();
-        saveGameFile = false;
-    }
-
-    public void SelectButton()
-    {
-        StartMenuCanvas.SetActive(false);
-        SelectCanvas.SetActive(true);
-        SpawnEnemies.isStoryMode = true;
-        saveGameFile = false;
-        PlayNextButtonSound();
-    }
-
-    public void Wave1Button()
-    {
-        selectCheck = true;
-        selectedWave = 1;
-        SelectShipCanvas1.SetActive(true);
-        SelectCanvas.SetActive(false);
-        DefaultCanvas.SetActive(false);
-    }
-
-    public void Wave2Button()
-    {
-        selectCheck = true;
-        selectedWave = 2;
-        SelectShipCanvas1.SetActive(true);
-        SelectCanvas.SetActive(false);
-        DefaultCanvas.SetActive(false);
-    }
-
-    public void Wave3Button()
-    {
-        selectCheck = true;
-        selectedWave = 3;
-        SelectShipCanvas1.SetActive(true);
-        SelectCanvas.SetActive(false);
-        DefaultCanvas.SetActive(false);
-    }
-
-    public void Wave4Button()
-    {
-        selectCheck = true;
-        selectedWave = 4;
-        SelectShipCanvas1.SetActive(true);
-        SelectCanvas.SetActive(false);
-        DefaultCanvas.SetActive(false);
-    }
-
-    public void Wave5Button()
-    {
-        selectCheck = true;
-        selectedWave = 5;
-        SelectShipCanvas1.SetActive(true);
-        SelectCanvas.SetActive(false);
-        DefaultCanvas.SetActive(false);
-    }
-
-    public void Wave6Button()
-    {
-        selectCheck = true;
-        selectedWave = 6;
-        SelectShipCanvas1.SetActive(true);
-        SelectCanvas.SetActive(false);
-        DefaultCanvas.SetActive(false);
-    }
-
-    public void Wave7Button()
-    {
-        selectCheck = true;
-        selectedWave = 7;
-        SelectShipCanvas1.SetActive(true);
-        SelectCanvas.SetActive(false);
-        DefaultCanvas.SetActive(false);
-    }
-
-    public void Wave8Button()
-    {
-        selectCheck = true;
-        selectedWave = 8;
-        SelectShipCanvas1.SetActive(true);
-        SelectCanvas.SetActive(false);
-        DefaultCanvas.SetActive(false);
-    }
-
-    public void Wave9Button()
-    {
-        selectCheck = true;
-        selectedWave = 9;
-        SelectShipCanvas1.SetActive(true);
-        SelectCanvas.SetActive(false);
-        DefaultCanvas.SetActive(false);
     }
 
     public void ArcadePrevButton()
@@ -485,21 +444,95 @@ public class StartMenu : MonoBehaviour
         }
         PlayBackButtonSound();
     }
-
     public void ArcadeNextButton()
     {
-        if(ArcadeCanvas1.activeInHierarchy==true)
+        if (ArcadeCanvas1.activeInHierarchy == true)
         {
             ArcadeCanvas1.SetActive(false);
             ArcadeCanvas2.SetActive(true);
         }
-        else if(ArcadeCanvas2.activeInHierarchy==true)
+        else if (ArcadeCanvas2.activeInHierarchy == true)
         {
             ArcadeCanvas2.SetActive(false);
             ArcadeCanvas1.SetActive(true);
         }
         PlayNextButtonSound();
     }
+
+
+    public void Wave1Button()
+    {
+        selectCheck = true;
+        selectedWave = 1;
+        SelectShipCanvas1.SetActive(true);
+        SelectCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+    }
+    public void Wave2Button()
+    {
+        selectCheck = true;
+        selectedWave = 2;
+        SelectShipCanvas1.SetActive(true);
+        SelectCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+    }
+    public void Wave3Button()
+    {
+        selectCheck = true;
+        selectedWave = 3;
+        SelectShipCanvas1.SetActive(true);
+        SelectCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+    }
+    public void Wave4Button()
+    {
+        selectCheck = true;
+        selectedWave = 4;
+        SelectShipCanvas1.SetActive(true);
+        SelectCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+    }
+    public void Wave5Button()
+    {
+        selectCheck = true;
+        selectedWave = 5;
+        SelectShipCanvas1.SetActive(true);
+        SelectCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+    }
+    public void Wave6Button()
+    {
+        selectCheck = true;
+        selectedWave = 6;
+        SelectShipCanvas1.SetActive(true);
+        SelectCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+    }
+    public void Wave7Button()
+    {
+        selectCheck = true;
+        selectedWave = 7;
+        SelectShipCanvas1.SetActive(true);
+        SelectCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+    }
+    public void Wave8Button()
+    {
+        selectCheck = true;
+        selectedWave = 8;
+        SelectShipCanvas1.SetActive(true);
+        SelectCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+    }
+    public void Wave9Button()
+    {
+        selectCheck = true;
+        selectedWave = 9;
+        SelectShipCanvas1.SetActive(true);
+        SelectCanvas.SetActive(false);
+        DefaultCanvas.SetActive(false);
+    }
+
 
     public void ArcadeEndlessModeButton()
     {
@@ -509,7 +542,6 @@ public class StartMenu : MonoBehaviour
         SpawnEnemies.isArcadeEndless = true;
         PlayNextButtonSound();
     }
-
     public void ArcadeLaserModeButton()
     {
         ArcadeCanvas1.SetActive(false);
@@ -518,7 +550,6 @@ public class StartMenu : MonoBehaviour
         SpawnEnemies.isArcadeLaser = true;
         PlayNextButtonSound();
     }
-
     public void ArcadeShockModeButton()
     {
         ArcadeCanvas1.SetActive(false);
@@ -527,7 +558,6 @@ public class StartMenu : MonoBehaviour
         SpawnEnemies.isArcadeShock = true;
         PlayNextButtonSound();
     }
-
     public void ArcadeNoGunsModeButton()
     {
         ArcadeCanvas1.SetActive(false);
@@ -536,7 +566,6 @@ public class StartMenu : MonoBehaviour
         SpawnEnemies.isArcadeNoGuns = true;
         PlayNextButtonSound();
     }
-
     public void ArcadeOneHPModeButton()
     {
         ArcadeCanvas1.SetActive(false);
@@ -545,7 +574,6 @@ public class StartMenu : MonoBehaviour
         SpawnEnemies.isArcadeOneHP = true;
         PlayNextButtonSound();
     }
-
     public void ArcadeRapidfireModeButton()
     {
         ArcadeCanvas2.SetActive(false);
@@ -554,7 +582,6 @@ public class StartMenu : MonoBehaviour
         SpawnEnemies.isArcadeRapidfire = true;
         PlayNextButtonSound();
     }
-
     public void ArcadeSpeedModeButton()
     {
         ArcadeCanvas2.SetActive(false);
@@ -563,7 +590,6 @@ public class StartMenu : MonoBehaviour
         SpawnEnemies.isArcadeSpeed = true;
         PlayNextButtonSound();
     }
-
     public void ArcadeDefendModeButton()
     {
         ArcadeCanvas2.SetActive(false);
@@ -572,7 +598,6 @@ public class StartMenu : MonoBehaviour
         SpawnEnemies.isArcadeDefend = true;
         PlayNextButtonSound();
     }
-
     public void ArcadeMirrorModeButton()
     {
         ArcadeCanvas2.SetActive(false);
@@ -581,7 +606,6 @@ public class StartMenu : MonoBehaviour
         SpawnEnemies.isArcadeMirror = true;
         PlayNextButtonSound();
     }
-
     public void ArcadeInsaneModeButton()
     {
         ArcadeCanvas2.SetActive(false);
@@ -591,20 +615,92 @@ public class StartMenu : MonoBehaviour
         PlayNextButtonSound();
     }
 
+
+    public void Test1Button()
+    {
+        for(int i=0;i<TestInfos.Length;i++)
+        {
+            TestButtons[i].SetActive(false);
+        }
+        TestInfos[0].SetActive(true);
+        buttonBack.SetActive(false);
+        PlayNextButtonSound();
+    }
+    public void Test2Button()
+    {
+        for (int i = 0; i < TestInfos.Length; i++)
+        {
+            TestButtons[i].SetActive(false);
+        }
+        TestInfos[1].SetActive(true);
+        buttonBack.SetActive(false);
+        PlayNextButtonSound();
+    }
+    public void Test3Button()
+    {
+        for (int i = 0; i < TestInfos.Length; i++)
+        {
+            TestButtons[i].SetActive(false);
+        }
+        TestInfos[2].SetActive(true);
+        buttonBack.SetActive(false);
+        PlayNextButtonSound();
+    }
+    public void Test4Button()
+    {
+        for (int i = 0; i < TestInfos.Length; i++)
+        {
+            TestButtons[i].SetActive(false);
+        }
+        TestInfos[3].SetActive(true);
+        buttonBack.SetActive(false);
+        PlayNextButtonSound();
+    }
+    public void Test5Button()
+    {
+        for (int i = 0; i < TestInfos.Length; i++)
+        {
+            TestButtons[i].SetActive(false);
+        }
+        TestInfos[4].SetActive(true);
+        buttonBack.SetActive(false);
+        PlayNextButtonSound();
+    }
+    public void Test6Button()
+    {
+        for (int i = 0; i < TestInfos.Length; i++)
+        {
+            TestButtons[i].SetActive(false);
+        }
+        TestInfos[5].SetActive(true);
+        buttonBack.SetActive(false);
+        PlayNextButtonSound();
+    }
+    public void TestBackButton()
+    {
+        for (int i = 0; i < TestInfos.Length; i++)
+        {
+            TestButtons[i].SetActive(true);
+            TestInfos[i].SetActive(false);
+        }
+        buttonBack.SetActive(true);
+        PlayBackButtonSound();
+    }
+
+
     public void VolumeSlider(float volume)
     {
         volumeText.text = (volume * 100).ToString("F0");
     }
-
     public void MusicSlider(float volume)
     {
         musicText.text = (volume * 100).ToString("F0");
     }
-
     public void SpeedSlider(float speed)
     {
         speedText.text = (speed).ToString("F0") + "x";
     }
+
 
     public void ArcadeControl()
     {
@@ -619,7 +715,6 @@ public class StartMenu : MonoBehaviour
             selectButton.interactable = true;
         }
     }
-
     public void VolumeControl()
     {
         if(PlayerPrefs.GetInt("ChangeValues")==1)
@@ -636,7 +731,6 @@ public class StartMenu : MonoBehaviour
         }
         
     }
-
     public void MusicControl()
     {
         if (PlayerPrefs.GetInt("ChangeValues") == 1)
@@ -653,7 +747,6 @@ public class StartMenu : MonoBehaviour
         }
             
     }
-
     public void SpeedControl()
     {
         if(PlayerPrefs.GetInt("ChangeValues")==1)
@@ -668,7 +761,6 @@ public class StartMenu : MonoBehaviour
         }
         
     }
-
     public void ContinueControl()
     {
         if (LoadData.loadedWave == 0 || LoadData.loadedWave == 1)
@@ -680,7 +772,6 @@ public class StartMenu : MonoBehaviour
             continueButton.interactable = true;
         }
     }
-
     public void ScoreControl()
     {
         highScoreText.text = LoadData.loadedHigh.ToString();
@@ -695,7 +786,6 @@ public class StartMenu : MonoBehaviour
         arcMirrorHighScoreText.text = LoadData.loadedArcMirrorHigh.ToString();
         arcInsaneHighScoreText.text = LoadData.loadedArcInsaneHigh.ToString();
     }
-
     public void ShipsControl()
     {
         ownships = LoadData.loadedMyShips;
@@ -720,10 +810,9 @@ public class StartMenu : MonoBehaviour
         }
 
     }
-
     public void ShopControl()
     {
-        if (PlayerPrefs.GetInt("End") == 1)
+        if(Achievements.unit1Controls[0]==true)
         {
             ship8Price = 0;
         }
@@ -866,12 +955,38 @@ public class StartMenu : MonoBehaviour
             ship13PriceText.text = ship13Price.ToString() + " C";
         }
     }
-
     public void MoneyControl()
     {
         coin = LoadData.loadedCoin;
         coinText.text = coin.ToString() + " C";
     }
+    public void BackGroundControl()
+    {
+        savedBG = PlayerPrefs.GetInt("BGNo");
+        backGround.sprite = bgs[savedBG];
+    }
+    public void RotateShip()
+    {
+        rotateCounter += Time.deltaTime * 100;
+        ship13atshop.transform.rotation = Quaternion.Euler(0, 0, rotateCounter);
+        ship13atselect.transform.rotation = Quaternion.Euler(0, 0, rotateCounter);
+    }
+
+    public void Unit1TestControl()
+    {
+        for (int i=0;i<Achievements.maxAchCount-1;i++)
+        {
+            if(Achievements.unit1Controls[i]==true)
+            {
+                tests[i].GetComponent<Image>();
+                tests[i].color = new Color(1,0,0.65f,1);
+
+                infos[i].GetComponent<Image>();
+                infos[i].color = new Color(1, 0, 0.62f, 1);
+            }
+        }
+    }
+
 
     public void ship1Button()
     {
@@ -912,7 +1027,6 @@ public class StartMenu : MonoBehaviour
         PlayNextButtonSound();
         shipClicked = true;
     }
-
     public void ship4Button()
     {
         Status.ship = 4;
@@ -926,7 +1040,6 @@ public class StartMenu : MonoBehaviour
         PlayNextButtonSound();
         shipClicked = true;
     }
-
     public void ship5Button()
     {
         Status.ship = 5;
@@ -940,7 +1053,6 @@ public class StartMenu : MonoBehaviour
         PlayNextButtonSound();
         shipClicked = true;
     }
-
     public void ship6Button()
     {
         Status.ship = 6;
@@ -954,7 +1066,6 @@ public class StartMenu : MonoBehaviour
         PlayNextButtonSound();
         shipClicked = true;
     }
-
     public void ship7Button()
     {
         Status.ship = 7;
@@ -968,7 +1079,6 @@ public class StartMenu : MonoBehaviour
         PlayNextButtonSound();
         shipClicked = true;
     }
-
     public void ship8Button()
     {
         Status.ship = 8;
@@ -982,7 +1092,6 @@ public class StartMenu : MonoBehaviour
         PlayNextButtonSound();
         shipClicked = true;
     }
-
     public void ship9Button()
     {
         Status.ship = 9;
@@ -1009,7 +1118,6 @@ public class StartMenu : MonoBehaviour
         PlayNextButtonSound();
         shipClicked = true;
     }
-
     public void ship11Button()
     {
         Status.ship = 11;
@@ -1023,7 +1131,6 @@ public class StartMenu : MonoBehaviour
         PlayNextButtonSound();
         shipClicked = true;
     }
-
     public void ship12Button()
     {
         Status.ship = 12;
@@ -1037,7 +1144,6 @@ public class StartMenu : MonoBehaviour
         PlayNextButtonSound();
         shipClicked = true;
     }
-
     public void ship13Button()
     {
         Status.ship = 13;
@@ -1154,7 +1260,6 @@ public class StartMenu : MonoBehaviour
             PlayCancelSound();
         }
     }
-
     public void ship9ShopButton()
     {
         if (coin >= ship9Price)
@@ -1172,7 +1277,6 @@ public class StartMenu : MonoBehaviour
             PlayCancelSound();
         }
     }
-
     public void ship10ShopButton()
     {
         if (coin >= ship10Price)
@@ -1190,7 +1294,6 @@ public class StartMenu : MonoBehaviour
             PlayCancelSound();
         }
     }
-
     public void ship11ShopButton()
     {
         if (coin >= ship11Price)
@@ -1208,7 +1311,6 @@ public class StartMenu : MonoBehaviour
             PlayCancelSound();
         }
     }
-
     public void ship12ShopButton()
     {
         if (coin >= ship12Price)
@@ -1226,7 +1328,6 @@ public class StartMenu : MonoBehaviour
             PlayCancelSound();
         }
     }
-
     public void ship13ShopButton()
     {
         if (coin >= ship13Price)
@@ -1245,15 +1346,12 @@ public class StartMenu : MonoBehaviour
         }
     }
 
-    public void BackGroundCheck()
-    {
-        savedBG = PlayerPrefs.GetInt("BGNo");
-        backGround.sprite = bgs[savedBG];
-    }
 
     public void LoadValues()
     {
         LoadData.loadData();
+
+        Achievements.AchControl();
 
         ArcadeControl();
 
@@ -1273,21 +1371,32 @@ public class StartMenu : MonoBehaviour
 
         ShopControl();
 
-        BackGroundCheck();
+        BackGroundControl();
+
+        Unit1TestControl();
     }
 
-    public void RotateShip()
-    {
-        rotateCounter += Time.deltaTime * 100;
-        ship13atshop.transform.rotation = Quaternion.Euler(0, 0, rotateCounter);
-        ship13atselect.transform.rotation = Quaternion.Euler(0, 0, rotateCounter);
-    }
     public void Update()
     {
         RotateShip();
         ShipsControl();
         MoneyControl();
         ShopControl();
+        Achievements.AchControl();
+        Unit1TestControl();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (QuitCanvas.activeInHierarchy == false)
+            {
+                QuitCanvas.SetActive(true);
+            }
+            else
+            {
+                QuitCanvas.SetActive(false);
+            }
+        }
+
         if (shipClicked == true)
         {
             LoadingCanvas.SetActive(true);

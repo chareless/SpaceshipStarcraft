@@ -14,6 +14,7 @@ public class SaveData : MonoBehaviour
     public static int currentShip;
     public static int Coin;
     public static string MyShips;
+    public static string Achs;
 
     static void saveScore()
     {
@@ -71,6 +72,13 @@ public class SaveData : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public static void saveAch()
+    {
+        Achs = Achievements.achievements;
+        PlayerPrefs.SetString("Achievements", Achs);
+        PlayerPrefs.Save();
+    }
+
     public static void saveData()
     {
         saveHealth();
@@ -81,6 +89,7 @@ public class SaveData : MonoBehaviour
         saveShip();
         saveCoin();
         saveMyShips();
+        saveAch();
         PlayerPrefs.Save();
     }
 }

@@ -14,7 +14,7 @@ public class EnemyScript : MonoBehaviour
     public GameObject particle;
     void Start()
     {
-        enemyRb = GetComponentInParent<Rigidbody2D>();
+        enemyRb = GetComponent<Rigidbody2D>();
         EnemyCreate();
     }
 

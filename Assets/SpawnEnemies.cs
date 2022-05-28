@@ -104,10 +104,14 @@ public class SpawnEnemies : MonoBehaviour
         }
         else if (Status.wave == 10)
         {
-            gameEnd = true;
-            endCanvas.SetActive(true);
             completeGame = 1;
             PlayerPrefs.SetInt("End", completeGame);
+            if(gameEnd==false)
+            {
+                PlayerPrefs.SetInt("TotalEnd", PlayerPrefs.GetInt("TotalEnd") + 1);
+            }
+            gameEnd = true;
+            endCanvas.SetActive(true);
             PlayerPrefs.Save();
         }
 
@@ -225,6 +229,7 @@ public class SpawnEnemies : MonoBehaviour
 
     void Update()
     {
+        Achievements.AchControl();
         playTimeSayac += Time.deltaTime;
         if(isStoryMode == true)
         {

@@ -248,7 +248,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7078406665242692169}
   - component: {fileID: 8107128599696420009}
-  - component: {fileID: 3728884890740613937}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -323,24 +322,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3728884890740613937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4099452640217564024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b2b12780d8328143ad8da04e9d20714, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sayac: 10
-  alive: 1
-  health: 1
-  carpti: 0
-  control: 0
-  particle: {fileID: 0}
 --- !u!1 &6520874645179274994
 GameObject:
   m_ObjectHideFlags: 0
