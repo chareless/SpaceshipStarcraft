@@ -20,49 +20,45 @@ public class EnemyScript : MonoBehaviour
 
     void EnemyCreate()
     {
-        if (Status.wave == 1)
-        {
-            speed = -16;
-        }
-        else if (Status.wave == 2)
-        {
-            speed = -16;
-        }
-        else if (Status.wave == 3)
-        {
-            speed = -16;
-        }
-        else if (Status.wave == 4)
-        {
-            speed = -18;
-        }
-        else if (Status.wave == 5)
-        {
-            speed = -18;
-        }
-        else if (Status.wave== 6)
-        {
-            speed = -18;
-        }
-        else if (Status.wave == 7)
-        {
-            speed = -20;
-        }
-        else if (Status.wave == 8)
-        {
-            speed = -20;
-        }
-        else if (Status.wave == 9)
-        {
-            speed = -20;
-        }
-        else if (Status.wave >= 10)
-        {
-            speed = -20;
-        }
-        if(SpawnEnemies.isArcadeSpeed==true || SpawnEnemies.isArcadeInsane==true || SpawnEnemies.isArcadeDefend==true)
+        if (SpawnEnemies.isArcadeSpeed == true || SpawnEnemies.isArcadeInsane == true || SpawnEnemies.isArcadeDefend == true)
         {
             speed = -25;
+        }
+        else
+        {
+            switch (Status.wave)
+            {
+                case 1:
+                    speed = -16;
+                    break;
+                case 2:
+                    speed = -16;
+                    break;
+                case 3:
+                    speed = -16;
+                    break;
+                case 4:
+                    speed = -18;
+                    break;
+                case 5:
+                    speed = -18;
+                    break;
+                case 6:
+                    speed = -18;
+                    break;
+                case 7:
+                    speed = -20;
+                    break;
+                case 8:
+                    speed = -20;
+                    break;
+                case 9:
+                    speed = -20;
+                    break;
+                case 10:
+                    speed = -20; ;
+                    break;
+            }
         }
     }
 

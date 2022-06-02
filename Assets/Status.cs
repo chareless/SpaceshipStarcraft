@@ -93,7 +93,7 @@ public class Status : MonoBehaviour
 
     void Regen()
     {
-        if(SpawnEnemies.isArcadeOneHP!=true)
+        if(SpawnEnemies.isArcadeOneHP!=true && SpawnEnemies.isArcadeInsane!=true)
         {
             health += (maxHealth - health) * 40 / 100;
         }
@@ -102,45 +102,93 @@ public class Status : MonoBehaviour
 
     void PlayerStats()
     {
-        if(playerLevel == 1)
+        switch(playerLevel)
         {
-            damage = 5;
-            attackSpeed = 0.5f;
-        }
-        else if (playerLevel == 2)
-        {
-            damage = 10;
-            attackSpeed = 0.45f;
-        }
-        else if (playerLevel == 3)
-        {
-            damage = 15;
-            attackSpeed = 0.4f;
-        }
-        else if (playerLevel == 4)
-        {
-            damage = 20;
-            attackSpeed = 0.35f;
-        }
-        else if (playerLevel == 5)
-        {
-            damage = 25;
-            attackSpeed = 0.3f;
-        }
-        else if (playerLevel == 6)
-        {
-            damage = 30;
-            attackSpeed = 0.25f;
-        }
-        else if (playerLevel == 7)
-        {
-            damage = 35;
-            attackSpeed = 0.22f;
-        }
-        else if (playerLevel == 8)
-        {
-            damage = 40;
-            attackSpeed = 0.2f;
+            case 1:
+                damage = 5;
+                attackSpeed = 0.5f;
+                if(totalKill>=200)
+                {
+                    Regen();
+                    playerLevel++;
+                }
+                break;
+            case 2:
+                damage = 10;
+                attackSpeed = 0.45f;
+                if (totalKill >= 400)
+                {
+                    Regen();
+                    playerLevel++;
+                }
+                break;
+            case 3:
+                damage = 15;
+                attackSpeed = 0.4f;
+                if (totalKill >= 600)
+                {
+                    Regen();
+                    playerLevel++;
+                }
+                break;
+            case 4:
+                damage = 20;
+                attackSpeed = 0.35f;
+                if (totalKill >= 800)
+                {
+                    Regen();
+                    playerLevel++;
+                }
+                break;
+            case 5:
+                damage = 25;
+                attackSpeed = 0.3f;
+                if (totalKill >= 1000)
+                {
+                    Regen();
+                    playerLevel++;
+                }
+                break;
+            case 6:
+                damage = 30;
+                attackSpeed = 0.25f;
+                if (totalKill >= 1500)
+                {
+                    Regen();
+                    playerLevel++;
+                }
+                break;
+            case 7:
+                damage = 35;
+                attackSpeed = 0.22f;
+                if (totalKill >= 2000)
+                {
+                    Regen();
+                    playerLevel++;
+                }
+                break;
+            case 8:
+                damage = 40;
+                attackSpeed = 0.2f;
+                if (totalKill >= 2500)
+                {
+                    Regen();
+                    playerLevel++;
+                }
+                break;
+            case 9:
+                damage = 45;
+                attackSpeed = 0.18f;
+                if (totalKill >= 5000)
+                {
+                    Regen();
+                    playerLevel++;
+                }
+                break;
+            case 10:
+                damage = 50;
+                attackSpeed = 0.15f;
+                break;
         }
     }
 
@@ -156,45 +204,6 @@ public class Status : MonoBehaviour
         aSpeedText.text = (1/attackSpeed).ToString("N2",CultureInfo.CreateSpecificCulture("en-US"));
         damageText.text = damage.ToString();
         enemyText.text = (SpawnEnemies.spawnedEnemy + "/" + SpawnEnemies.waveCount).ToString();
-    }
-
-    void LevelUpdate()
-    {
-        if(playerLevel == 1 && totalKill == 200)
-        {
-            playerLevel = 2;
-            Regen();
-        }
-        else if(playerLevel == 2 && totalKill == 400)
-        {
-            playerLevel = 3;
-            Regen();
-        }
-        else if(playerLevel == 3 && totalKill == 600)
-        {
-            playerLevel = 4;
-            Regen();
-        }
-        else if(playerLevel == 4 && totalKill == 800)
-        {
-            playerLevel = 5;
-            Regen();
-        }
-        else if(playerLevel == 5 && totalKill == 1000)
-        {
-            playerLevel = 6;
-            Regen();
-        }
-        else if (playerLevel == 6 && totalKill == 1500)
-        {
-            playerLevel = 7;
-            Regen();
-        }
-        else if (playerLevel == 7 && totalKill == 2000)
-        {
-            playerLevel = 8;
-            Regen();
-        }
     }
 
     public void SoundUpdate()
@@ -261,27 +270,29 @@ public class Status : MonoBehaviour
     {
         health -= dmg;
     }
-    void Update()
-    {
-        PlayerStats();
-        LabelUpdate();
-        LevelUpdate();
-        SoundUpdate();
 
+    void HealthControl()
+    {
         if (health > maxHealth)
         {
             health = maxHealth;
         }
         healthbar.fillAmount = (float)health / (float)maxHealth;
 
-        if(health<=0)
+        if (health <= 0)
         {
             Instantiate(particle, transform.position, Quaternion.identity);
             health = 0;
             Destroy(gameObject);
             gameOverCanvas.SetActive(true);
         }
-
+    }
+    void Update()
+    {
+        PlayerStats();
+        LabelUpdate();
+        SoundUpdate();
+        HealthControl();
         if(SpawnEnemies.isStoryMode!=true && PauseMenuScript.GamePaused!=true)
         {
             PointsArcade();

@@ -259,6 +259,16 @@ public class StartMenu : MonoBehaviour
         saveGameFile = false;
         PlayNextButtonSound();
     }
+    public void ToMRCWebSite()
+    {
+        PlayNextButtonSound();
+        Application.OpenURL("https://saribayirdeniz.cf");
+    }
+    public void ToGameWebSite()
+    {
+        PlayNextButtonSound();
+        Application.OpenURL("http://saribayirdeniz.cf/spaceshipstarcraft.html");
+    }
 
 
     public void ShopPrevButton()

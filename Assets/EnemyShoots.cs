@@ -34,68 +34,62 @@ public class EnemyShoots : MonoBehaviour
     {
         Sayac -= Time.deltaTime;
 
-        if (Status.wave==1)
+        switch(Status.wave)
         {
-            if (randomShoot < 10)
-            {
-                Shoots();
-            }
-        }
-        else if (Status.wave == 2)
-        {
-            if (randomShoot < 12)
-            {
-                Shoots();
-            }
-        }
-        else if (Status.wave == 3)
-        {
-            if (randomShoot < 15)
-            {
-                Shoots();
-            }
-        }
-        else if (Status.wave == 4)
-        {
-            if (randomShoot < 17)
-            {
-                Shoots();
-            }
-        }
-        else if (Status.wave == 5)
-        {
-            if (randomShoot < 20)
-            {
-                Shoots();
-            }
-        }
-        else if (Status.wave == 6)
-        {
-            if (randomShoot < 22)
-            {
-                Shoots();
-            }
-        }
-        else if (Status.wave == 7)
-        {
-            if (randomShoot < 25)
-            {
-                Shoots();
-            }
-        }
-        else if (Status.wave == 8)
-        {
-            if (randomShoot < 27)
-            {
-                Shoots();
-            }
-        }
-        else if (Status.wave == 9)
-        {
-            if (randomShoot < 30)
-            {
-                Shoots();
-            }
+            case 1:
+                if (randomShoot < 10)
+                {
+                    Shoots();
+                }
+                break;
+            case 2:
+                if (randomShoot < 12)
+                {
+                    Shoots();
+                }
+                break;
+            case 3:
+                if (randomShoot < 15)
+                {
+                    Shoots();
+                }
+                break;
+            case 4:
+                if (randomShoot < 17)
+                {
+                    Shoots();
+                }
+                break;
+            case 5:
+                if (randomShoot < 20)
+                {
+                    Shoots();
+                }
+                break;
+            case 6:
+                if (randomShoot < 22)
+                {
+                    Shoots();
+                }
+                break;
+            case 7:
+                if (randomShoot < 25)
+                {
+                    Shoots();
+                }
+                break;
+            case 8:
+                if (randomShoot < 27)
+                {
+                    Shoots();
+                }
+                break;
+            case 9:
+                if (randomShoot < 30)
+                {
+                    Shoots();
+                }
+                break;
         }
     }
 }
