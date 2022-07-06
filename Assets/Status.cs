@@ -41,8 +41,13 @@ public class Status : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = StartMenu.maxFPS;
-        if(StartMenu.saveGameFile==false)
+        Application.targetFrameRate = Screen.currentResolution.refreshRate;
+        if (SpawnEnemies.isStoryMode != true && PauseMenuScript.GamePaused != true)
+        {
+            InvokeRepeating("PointsArcade", 0f, 0.015f);
+        }
+        
+        if (StartMenu.saveGameFile==false)
         {
             health = maxHealth;
             if(StartMenu.selectCheck==true)
@@ -79,7 +84,6 @@ public class Status : MonoBehaviour
         }
         sourceAudio = GetComponentInChildren<AudioSource>();
     }
-
     void CreateShip()
     {
         for(int i=0;i<StartMenu.maxShipCount;i++)
@@ -248,7 +252,7 @@ public class Status : MonoBehaviour
         }
     }
 
-    public static void PointsArcade()
+    public void PointsArcade()
     {
         score += playerLevel;
     }
@@ -287,16 +291,13 @@ public class Status : MonoBehaviour
             gameOverCanvas.SetActive(true);
         }
     }
+
     void Update()
     {
         PlayerStats();
         LabelUpdate();
         SoundUpdate();
         HealthControl();
-        if(SpawnEnemies.isStoryMode!=true && PauseMenuScript.GamePaused!=true)
-        {
-            PointsArcade();
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

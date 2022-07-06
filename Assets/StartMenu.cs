@@ -75,7 +75,6 @@ public class StartMenu : MonoBehaviour
     public static float musicValue;
     public static float speedValue;
     public float timer;
-    public static int maxFPS=60;
     public static int coin;
     public static int ship3Price;
     public static int ship4Price;
@@ -121,7 +120,7 @@ public class StartMenu : MonoBehaviour
         MarketPrice();
         LoadValues();
         versionText.text = Application.version;
-        Application.targetFrameRate = maxFPS;
+        Application.targetFrameRate = Screen.currentResolution.refreshRate;
         FileSave.TotalData();
     }
 
