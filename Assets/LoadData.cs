@@ -162,7 +162,7 @@ public class LoadData : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("ArcShockHighscore") != 0)
         {
-            loadedArcOneHPHigh = PlayerPrefs.GetInt("ArcShockHighscore");
+            loadedArcShockHigh = PlayerPrefs.GetInt("ArcShockHighscore");
         }
         else
         {
