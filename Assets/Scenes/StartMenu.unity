@@ -929,19 +929,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 44950389}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship5Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &44950389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1169,19 +1157,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 64785967}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ArcadeInsaneModeButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &64785969
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1273,19 +1249,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 77577389}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship10Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &77577389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2093,19 +2057,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 131600719}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship12ShopButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &131600719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2834,19 +2786,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 156686204}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ArcadeShockModeButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &156686206
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3229,19 +3169,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 169527729}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ArcadeNoGunsModeButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &169527731
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4587,19 +4515,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 251944733}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Wave5Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &251944735
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5724,19 +5640,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 302318837}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ArcadeOneHPModeButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &302318839
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5858,19 +5762,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 304047423}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ArcadeSpeedModeButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &304047425
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6415,19 +6307,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 337617337}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship2Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &337617337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6648,34 +6528,23 @@ MonoBehaviour:
   musicText: {fileID: 1012833642}
   speedText: {fileID: 1065103497}
   coinText: {fileID: 1621270153}
-  ship3PriceText: {fileID: 1302189296}
-  ship4PriceText: {fileID: 1029405362}
-  ship5PriceText: {fileID: 151167411}
-  ship6PriceText: {fileID: 1666698996}
-  ship7PriceText: {fileID: 1045028860}
-  ship8PriceText: {fileID: 416646936}
-  ship9PriceText: {fileID: 10959217}
-  ship10PriceText: {fileID: 1919861737}
-  ship11PriceText: {fileID: 1883714658}
-  ship12PriceText: {fileID: 1602597696}
-  ship13PriceText: {fileID: 692903954}
+  shipPriceTexts:
+  - {fileID: 752733186}
+  - {fileID: 1469282306}
+  - {fileID: 1302189296}
+  - {fileID: 1029405362}
+  - {fileID: 151167411}
+  - {fileID: 1666698996}
+  - {fileID: 1045028860}
+  - {fileID: 416646936}
+  - {fileID: 10959217}
+  - {fileID: 1919861737}
+  - {fileID: 1883714658}
+  - {fileID: 1602597696}
+  - {fileID: 692903954}
   continueButton: {fileID: 1039408153}
   arcadeButton: {fileID: 250398740}
   selectButton: {fileID: 442602330}
-  ships:
-  - {fileID: 861080909}
-  - {fileID: 337617336}
-  - {fileID: 1689348158}
-  - {fileID: 1764592407}
-  - {fileID: 44950388}
-  - {fileID: 706587306}
-  - {fileID: 1618864711}
-  - {fileID: 395379244}
-  - {fileID: 1677239970}
-  - {fileID: 77577388}
-  - {fileID: 1265273795}
-  - {fileID: 1808003059}
-  - {fileID: 1889157646}
   shopShips:
   - {fileID: 1245734485}
   - {fileID: 2054701002}
@@ -6690,10 +6559,31 @@ MonoBehaviour:
   - {fileID: 799417228}
   - {fileID: 131600718}
   - {fileID: 1937804556}
+  WaveButtons:
+  - {fileID: 1639059801}
+  - {fileID: 1158480040}
+  - {fileID: 2041672898}
+  - {fileID: 843764827}
+  - {fileID: 251944734}
+  - {fileID: 2029217131}
+  - {fileID: 1798430727}
+  - {fileID: 1264737010}
+  - {fileID: 544192234}
+  ArcadeButtons:
+  - {fileID: 975923597}
+  - {fileID: 1738578677}
+  - {fileID: 156686205}
+  - {fileID: 169527730}
+  - {fileID: 302318838}
+  - {fileID: 663417963}
+  - {fileID: 304047424}
+  - {fileID: 1408295493}
+  - {fileID: 372536137}
+  - {fileID: 64785968}
   volumeSlider: {fileID: 1769607986}
   musicSlider: {fileID: 1859555420}
   speedSlider: {fileID: 508470406}
-  objectShips:
+  ships:
   - {fileID: 861080907}
   - {fileID: 337617334}
   - {fileID: 1689348156}
@@ -6731,6 +6621,7 @@ MonoBehaviour:
   purchase: {fileID: 8300000, guid: 29df8e798230e44128d54040c4971b7f, type: 3}
   cancel: {fileID: 8300000, guid: e8ccab16a5a3f43a1a981d899d8d171c, type: 3}
   timer: 0.1
+  shipPrices: 0000000000000000fa0000002c0100005e01000090010000c201000040420f00f40100002602000058020000bc020000e8030000
   shipClicked: 0
   ship13atshop: {fileID: 1538899468}
   ship13atselect: {fileID: 2017413009}
@@ -7299,19 +7190,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 372536136}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ArcadeMirrorModeButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &372536138
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7699,19 +7578,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 395379245}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship8Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &395379245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8774,19 +8641,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 527216450}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship4ShopButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &527216450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8938,19 +8793,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 544192233}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Wave9Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &544192235
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9556,19 +9399,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 564058116}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship10ShopButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &564058116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11110,19 +10941,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 663417962}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ArcadeRapidfireModeButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &663417964
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11350,19 +11169,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 675773860}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship3ShopButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &675773860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11774,19 +11581,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 696495849}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship7ShopButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &696495849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12176,19 +11971,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 706587307}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship6Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &706587307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12499,6 +12282,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732406473}
   m_CullTransparentMesh: 1
+--- !u!1 &752733183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 752733184}
+  - component: {fileID: 752733185}
+  - component: {fileID: 752733186}
+  m_Layer: 5
+  m_Name: price
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &752733184
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752733183}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1245734484}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -2.1}
+  m_SizeDelta: {x: 5.3572, y: 1.125}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &752733185
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752733183}
+  m_CullTransparentMesh: 1
+--- !u!114 &752733186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752733183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8509804, g: 0.8431553, b: 0.45882353, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 1
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 250 C
 --- !u!1 &762205140
 GameObject:
   m_ObjectHideFlags: 0
@@ -13123,19 +12986,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 799417229}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship11ShopButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &799417229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13895,19 +13746,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 843764826}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Wave4Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &843764828
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14132,19 +13971,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 861080910}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship1Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &861080910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16353,19 +16180,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 975923596}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ArcadeEndlessModeButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &975923598
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16621,19 +16436,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 984045535}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Test2Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &984045537
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16726,19 +16529,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1000657804}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship5ShopButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1000657804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18026,19 +17817,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1067895436}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship6ShopButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1067895436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18544,19 +18323,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1158480039}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Wave2Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &1158480041
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19065,19 +18832,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1177170134}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Test5Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &1177170136
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19871,6 +19626,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1509532345}
+  - {fileID: 752733184}
   m_Father: {fileID: 326951124}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20288,19 +20044,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1264737009}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Wave8Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &1264737011
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20392,19 +20136,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1265273796}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship11Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1265273796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21699,19 +21431,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1408295492}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ArcadeDefendModeButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &1408295494
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22658,6 +22378,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463830726}
   m_CullTransparentMesh: 1
+--- !u!1 &1469282303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1469282304}
+  - component: {fileID: 1469282305}
+  - component: {fileID: 1469282306}
+  m_Layer: 5
+  m_Name: price
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1469282304
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469282303}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2054701001}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -2.1}
+  m_SizeDelta: {x: 5.3572, y: 1.125}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1469282305
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469282303}
+  m_CullTransparentMesh: 1
+--- !u!114 &1469282306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469282303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8509804, g: 0.8431553, b: 0.45882353, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 1
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 250 C
 --- !u!1 &1472489036
 GameObject:
   m_ObjectHideFlags: 0
@@ -22878,19 +22678,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1476055041}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship8ShopButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1476055041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24794,19 +24582,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1607133598}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Test3Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &1607133600
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25277,19 +25053,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1618864712}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship7Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1618864712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25842,19 +25606,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1639059800}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Wave1Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &1639059802
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26210,19 +25962,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1677239971}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship9Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1677239971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26344,19 +26084,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1689348159}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship3Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1689348159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27072,19 +26800,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1738578676}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ArcadeLaserModeButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &1738578678
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27774,19 +27490,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1764592408}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship4Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1764592408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28205,19 +27909,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1798430726}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Wave7Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &1798430728
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28444,19 +28136,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1808003060}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship12Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1808003060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29117,19 +28797,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1847211334}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Test6Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &1847211336
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29699,19 +29367,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1889157647}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship13Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1889157647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30600,19 +30256,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1937804557}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship13ShopButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1937804557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31113,19 +30757,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1960803935}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Test1Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &1960803937
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -31298,19 +30930,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1987232796}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ship9ShopButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1987232796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31866,19 +31486,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2015427238}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Test4Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &2015427240
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32352,19 +31960,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2029217130}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Wave6Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &2029217132
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32723,19 +32319,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2041672897}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 342829936}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Wave3Button
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &2041672899
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32776,6 +32360,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9928115}
+  - {fileID: 1469282304}
   m_Father: {fileID: 326951124}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
