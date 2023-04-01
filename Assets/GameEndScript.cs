@@ -143,6 +143,5 @@ public class GameEndScript : MonoBehaviour
             ButtonMain.SetActive(false);
             ButtonQuit.SetActive(false);
         }
-       
     }
 }

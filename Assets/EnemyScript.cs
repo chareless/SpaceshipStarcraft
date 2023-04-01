@@ -86,7 +86,6 @@ public class EnemyScript : MonoBehaviour
                 Status.totalKill++;
                 Status.KillPoints();
             }
-
         }
         if(health<=0)
         {

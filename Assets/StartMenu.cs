@@ -378,6 +378,12 @@ public class StartMenu : MonoBehaviour
 
     public void BackButton()
     {
+        volumeSlider.value = volumeValue;
+        musicSlider.value = musicValue;
+        speedSlider.value = speedValue;
+        volumeText.text = (volumeValue * 100).ToString("F0");
+        musicText.text = (musicValue * 100).ToString("F0");
+        speedText.text = (speedValue).ToString("F0") + "x";
         backGround.sprite = bgs[savedBG];
         MainMenuCanvas.SetActive(true);
         AchievementCanvas.SetActive(false);

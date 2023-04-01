@@ -1471,6 +1471,7 @@ MonoBehaviour:
   boomSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   bossSound: {fileID: 8300000, guid: dc9f34f8f8083485187956f1e0a5df2f, type: 3}
   collisionSound: {fileID: 8300000, guid: 7575f4814720b4b509b55764405171f1, type: 3}
+  shockSound: {fileID: 8300000, guid: 6e44f810bb48c0f44a76f4511b41c4d9, type: 3}
 --- !u!50 &233804082
 Rigidbody2D:
   serializedVersion: 4
@@ -2378,6 +2379,7 @@ MonoBehaviour:
   boomSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   bossSound: {fileID: 8300000, guid: dc9f34f8f8083485187956f1e0a5df2f, type: 3}
   collisionSound: {fileID: 8300000, guid: 7575f4814720b4b509b55764405171f1, type: 3}
+  shockSound: {fileID: 8300000, guid: 6e44f810bb48c0f44a76f4511b41c4d9, type: 3}
 --- !u!50 &303313511
 Rigidbody2D:
   serializedVersion: 4
@@ -3912,6 +3914,7 @@ MonoBehaviour:
   boomSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   bossSound: {fileID: 8300000, guid: dc9f34f8f8083485187956f1e0a5df2f, type: 3}
   collisionSound: {fileID: 8300000, guid: 7575f4814720b4b509b55764405171f1, type: 3}
+  shockSound: {fileID: 8300000, guid: 6e44f810bb48c0f44a76f4511b41c4d9, type: 3}
 --- !u!50 &441879629
 Rigidbody2D:
   serializedVersion: 4
@@ -5768,6 +5771,7 @@ MonoBehaviour:
   boomSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   bossSound: {fileID: 8300000, guid: dc9f34f8f8083485187956f1e0a5df2f, type: 3}
   collisionSound: {fileID: 8300000, guid: 7575f4814720b4b509b55764405171f1, type: 3}
+  shockSound: {fileID: 8300000, guid: 6e44f810bb48c0f44a76f4511b41c4d9, type: 3}
 --- !u!50 &697505327
 Rigidbody2D:
   serializedVersion: 4
@@ -6619,6 +6623,7 @@ MonoBehaviour:
   boomSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   bossSound: {fileID: 8300000, guid: dc9f34f8f8083485187956f1e0a5df2f, type: 3}
   collisionSound: {fileID: 8300000, guid: 7575f4814720b4b509b55764405171f1, type: 3}
+  shockSound: {fileID: 8300000, guid: 6e44f810bb48c0f44a76f4511b41c4d9, type: 3}
 --- !u!50 &744265476
 Rigidbody2D:
   serializedVersion: 4
@@ -9158,6 +9163,7 @@ MonoBehaviour:
   boomSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   bossSound: {fileID: 8300000, guid: dc9f34f8f8083485187956f1e0a5df2f, type: 3}
   collisionSound: {fileID: 8300000, guid: 7575f4814720b4b509b55764405171f1, type: 3}
+  shockSound: {fileID: 8300000, guid: 6e44f810bb48c0f44a76f4511b41c4d9, type: 3}
 --- !u!50 &966445074
 Rigidbody2D:
   serializedVersion: 4
@@ -12868,6 +12874,7 @@ MonoBehaviour:
   boomSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   bossSound: {fileID: 8300000, guid: dc9f34f8f8083485187956f1e0a5df2f, type: 3}
   collisionSound: {fileID: 8300000, guid: 7575f4814720b4b509b55764405171f1, type: 3}
+  shockSound: {fileID: 8300000, guid: 6e44f810bb48c0f44a76f4511b41c4d9, type: 3}
 --- !u!50 &1384009100
 Rigidbody2D:
   serializedVersion: 4
@@ -13490,6 +13497,7 @@ MonoBehaviour:
   boomSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   bossSound: {fileID: 8300000, guid: dc9f34f8f8083485187956f1e0a5df2f, type: 3}
   collisionSound: {fileID: 8300000, guid: 7575f4814720b4b509b55764405171f1, type: 3}
+  shockSound: {fileID: 8300000, guid: 6e44f810bb48c0f44a76f4511b41c4d9, type: 3}
 --- !u!50 &1461490630
 Rigidbody2D:
   serializedVersion: 4
@@ -13788,6 +13796,7 @@ MonoBehaviour:
   boomSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   bossSound: {fileID: 8300000, guid: dc9f34f8f8083485187956f1e0a5df2f, type: 3}
   collisionSound: {fileID: 8300000, guid: 7575f4814720b4b509b55764405171f1, type: 3}
+  shockSound: {fileID: 8300000, guid: 6e44f810bb48c0f44a76f4511b41c4d9, type: 3}
 --- !u!50 &1535998498
 Rigidbody2D:
   serializedVersion: 4
@@ -14143,6 +14152,7 @@ MonoBehaviour:
   boomSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   bossSound: {fileID: 8300000, guid: dc9f34f8f8083485187956f1e0a5df2f, type: 3}
   collisionSound: {fileID: 8300000, guid: 7575f4814720b4b509b55764405171f1, type: 3}
+  shockSound: {fileID: 8300000, guid: 6e44f810bb48c0f44a76f4511b41c4d9, type: 3}
 --- !u!50 &1547522630
 Rigidbody2D:
   serializedVersion: 4
@@ -14404,6 +14414,7 @@ MonoBehaviour:
   boomSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   bossSound: {fileID: 8300000, guid: dc9f34f8f8083485187956f1e0a5df2f, type: 3}
   collisionSound: {fileID: 8300000, guid: 7575f4814720b4b509b55764405171f1, type: 3}
+  shockSound: {fileID: 8300000, guid: 6e44f810bb48c0f44a76f4511b41c4d9, type: 3}
 --- !u!50 &1577229535
 Rigidbody2D:
   serializedVersion: 4
@@ -17331,6 +17342,7 @@ MonoBehaviour:
   boomSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   bossSound: {fileID: 8300000, guid: dc9f34f8f8083485187956f1e0a5df2f, type: 3}
   collisionSound: {fileID: 8300000, guid: 7575f4814720b4b509b55764405171f1, type: 3}
+  shockSound: {fileID: 8300000, guid: 6e44f810bb48c0f44a76f4511b41c4d9, type: 3}
 --- !u!50 &1923546112
 Rigidbody2D:
   serializedVersion: 4
@@ -18346,6 +18358,7 @@ MonoBehaviour:
   boomSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   bossSound: {fileID: 8300000, guid: dc9f34f8f8083485187956f1e0a5df2f, type: 3}
   collisionSound: {fileID: 8300000, guid: 7575f4814720b4b509b55764405171f1, type: 3}
+  shockSound: {fileID: 8300000, guid: 6e44f810bb48c0f44a76f4511b41c4d9, type: 3}
 --- !u!50 &2017211874
 Rigidbody2D:
   serializedVersion: 4

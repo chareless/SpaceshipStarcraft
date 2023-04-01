@@ -37,6 +37,7 @@ public class Status : MonoBehaviour
     public AudioClip boomSound;
     public AudioClip bossSound;
     public AudioClip collisionSound;
+    public AudioClip shockSound;
     AudioSource sourceAudio;
 
     void Start()
@@ -311,7 +312,8 @@ public class Status : MonoBehaviour
         }
         if(collision.gameObject.tag == "enemycannon")
         {
-            if(SpawnEnemies.isArcadeShock==true || SpawnEnemies.isArcadeRapidfire==true || SpawnEnemies.isArcadeInsane==true)
+            sourceAudio.PlayOneShot(shockSound);
+            if (SpawnEnemies.isArcadeShock==true || SpawnEnemies.isArcadeRapidfire==true || SpawnEnemies.isArcadeInsane==true)
             {
                 GetDamage(50);
                 Points(-300);
@@ -326,7 +328,8 @@ public class Status : MonoBehaviour
         }
         if (collision.gameObject.tag == "enemylaser")
         {
-            if(SpawnEnemies.isArcadeLaser==true || SpawnEnemies.isArcadeRapidfire==true || SpawnEnemies.isArcadeInsane==true)
+            sourceAudio.PlayOneShot(shockSound);
+            if (SpawnEnemies.isArcadeLaser==true || SpawnEnemies.isArcadeRapidfire==true || SpawnEnemies.isArcadeInsane==true)
             {
                 GetDamage(100);
                 Points(-750);
