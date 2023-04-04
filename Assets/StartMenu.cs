@@ -237,12 +237,12 @@ public class StartMenu : MonoBehaviour
     public void ToMRCWebSite()
     {
         PlayNextButtonSound();
-        Application.OpenURL("https://saribayirdeniz.cf");
+        Application.OpenURL("https://chareless.github.io/saribayirdeniz/");
     }
     public void ToGameWebSite()
     {
         PlayNextButtonSound();
-        Application.OpenURL("http://saribayirdeniz.cf/spaceshipstarcraft.html");
+        Application.OpenURL("https://chareless.github.io/saribayirdeniz/spaceshipstarcraft.html");
     }
 
 
