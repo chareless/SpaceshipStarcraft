@@ -1,0 +1,1 @@
+D:\MyPrograms\Code\UnityGames\SS1\SpaceshipStarcraft\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\153w1c2o\obj\arm64-v8a

@@ -1,0 +1,5 @@
+D:/MyPrograms/Code/UnityGames/SS1/SpaceshipStarcraft/.utmp/RelWithDebInfo/153w1c2o/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/MyPrograms/Code/UnityGames/SS1/SpaceshipStarcraft/.utmp/RelWithDebInfo/153w1c2o/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/MyPrograms/Code/UnityGames/SS1/SpaceshipStarcraft/.utmp/RelWithDebInfo/153w1c2o/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+D:/MyPrograms/Code/UnityGames/SS1/SpaceshipStarcraft/.utmp/RelWithDebInfo/153w1c2o/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+D:/MyPrograms/Code/UnityGames/SS1/SpaceshipStarcraft/.utmp/RelWithDebInfo/153w1c2o/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

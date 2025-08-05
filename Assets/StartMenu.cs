@@ -100,7 +100,7 @@ public class StartMenu : MonoBehaviour
         ownships = "s1s2";
         LoadValues();
         versionText.text = Application.version;
-        Application.targetFrameRate = Screen.currentResolution.refreshRate;
+        Application.targetFrameRate = 120;
         FileSave.TotalData();
         ListenerInitialize();
     }
@@ -516,6 +516,7 @@ public class StartMenu : MonoBehaviour
         else
         {
             musicValue = 1;
+            PlayerPrefs.SetFloat("MusicValue",musicValue);
             musicSlider.value = musicValue;
             gameMusic.volume = musicValue;
         }

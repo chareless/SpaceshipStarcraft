@@ -1,0 +1,1 @@
+D:\MyPrograms\Code\UnityGames\SS1\SpaceshipStarcraft\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\FramePacing\UnitySwappyWrapper.h

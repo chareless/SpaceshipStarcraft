@@ -64,7 +64,7 @@ public class EnemyScript : MonoBehaviour
 
     void Update()
     {
-        enemyRb.velocity = new Vector2(0,speed);
+        enemyRb.linearVelocity = new Vector2(0,speed);
         sayac -= Time.deltaTime;
         if(sayac<=0 && alive==true)
         {

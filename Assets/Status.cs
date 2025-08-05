@@ -42,7 +42,7 @@ public class Status : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = Screen.currentResolution.refreshRate;
+        Application.targetFrameRate = 120;
         if (SpawnEnemies.isStoryMode != true && PauseMenuScript.GamePaused != true)
         {
             InvokeRepeating("PointsArcade", 0f, 0.015f);
