@@ -1,5 +1,3 @@
 # ninja log v5
-2	118	7761297267331324	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	7267ec674aa74978
-118	235	7761297268412625	D:/MyPrograms/Code/UnityGames/SS1/SpaceshipStarcraft/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/153w1c2o/obj/arm64-v8a/libswappywrapper.so	dfcfc612f90708b1
-2	109	7761304696111267	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	7267ec674aa74978
-109	225	7761304697193873	D:/MyPrograms/Code/UnityGames/SS1/SpaceshipStarcraft/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/153w1c2o/obj/arm64-v8a/libswappywrapper.so	dfcfc612f90708b1
+0	128	7816600007523025	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	fc93e350575edaed
+129	218	7816600008388034	D:/MyPrograms/Code/UnityGames/SS1/SpaceshipStarcraft/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/153w1c2o/obj/arm64-v8a/libswappywrapper.so	371351a1f69ad598
